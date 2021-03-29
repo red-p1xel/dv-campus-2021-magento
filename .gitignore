@@ -61,6 +61,7 @@ atlassian*
 !/pub/static/.htaccess
 
 /var/*
+!/var/*.sql.gz
 !/var/.htaccess
 /vendor/*
 !/vendor/.htaccess
