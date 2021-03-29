@@ -1,0 +1,36 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^/pub/
+RewriteCond %{REQUEST_URI} !^/setup/
+RewriteCond %{REQUEST_URI} !^/update/
+RewriteCond %{REQUEST_URI} !^/dev/
+RewriteRule .* /pub/$0 [L]
+DirectoryIndex index.php
+
+
+    <Files docker-compose.yml>
+        <IfVersion < 2.4>
+            order allow,deny
+            deny from all
+        </IfVersion>
+        <IfVersion >= 2.4>
+            Require all denied
+        </IfVersion>
+    </Files>
+    <Files docker-rebuild.sh>
+        <IfVersion < 2.4>
+            order allow,deny
+            deny from all
+        </IfVersion>
+        <IfVersion >= 2.4>
+            Require all denied
+        </IfVersion>
+    </Files>
+    <Files docker-sync.yml>
+        <IfVersion < 2.4>
+            order allow,deny
+            deny from all
+        </IfVersion>
+        <IfVersion >= 2.4>
+            Require all denied
+        </IfVersion>
+    </Files>
