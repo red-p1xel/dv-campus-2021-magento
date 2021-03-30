@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb104
--- Generation Time: Mar 30, 2021 at 08:37 AM
+-- Generation Time: Mar 30, 2021 at 08:44 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -168,7 +168,7 @@ INSERT INTO `m2_admin_user_session` (`id`, `session_id`, `user_id`, `status`, `c
 (2, 'j7s1q59c3753r0pnhrmdb14cub', 1, 1, '2021-03-29 14:38:32', '2021-03-29 14:38:32', '172.17.0.10'),
 (3, 'osavo0470391hq8b14409s1mtl', 1, 0, '2021-03-29 15:06:36', '2021-03-29 15:14:23', '172.17.0.10'),
 (4, '222fq5kq4qngijh4333nieb3le', 1, 1, '2021-03-29 15:14:47', '2021-03-29 15:15:53', '172.17.0.10'),
-(5, 'qc5f40jb3rqbfshf19hht41pb7', 1, 1, '2021-03-30 06:36:24', '2021-03-30 08:36:49', '172.17.0.10');
+(5, 'qc5f40jb3rqbfshf19hht41pb7', 1, 1, '2021-03-30 06:36:24', '2021-03-30 08:44:06', '172.17.0.10');
 
 -- --------------------------------------------------------
 
@@ -1268,11 +1268,11 @@ CREATE TABLE `m2_catalog_product_entity` (
 --
 
 INSERT INTO `m2_catalog_product_entity` (`entity_id`, `attribute_set_id`, `type_id`, `sku`, `has_options`, `required_options`, `created_at`, `updated_at`) VALUES
-(1, 4, 'simple', 'Keyboard HyperX Alloy FPS Pro Cherry MX Red USB', 0, 0, '2021-03-30 07:15:42', '2021-03-30 07:15:42'),
-(2, 4, 'simple', 'HX-KB6RDX-RU', 0, 0, '2021-03-30 07:21:00', '2021-03-30 08:35:39'),
-(3, 4, 'simple', '920-008092', 0, 0, '2021-03-30 07:24:53', '2021-03-30 08:36:09'),
-(4, 4, 'simple', '920-007147', 0, 0, '2021-03-30 07:28:46', '2021-03-30 08:36:33'),
-(5, 4, 'simple', '920-009275', 0, 0, '2021-03-30 07:33:30', '2021-03-30 08:37:07');
+(1, 4, 'simple', 'Keyboard HyperX Alloy FPS Pro Cherry MX Red USB', 0, 0, '2021-03-30 07:15:42', '2021-03-30 08:42:15'),
+(2, 4, 'simple', 'HX-KB6RDX-RU', 0, 0, '2021-03-30 07:21:00', '2021-03-30 08:42:56'),
+(3, 4, 'simple', '920-008092', 0, 0, '2021-03-30 07:24:53', '2021-03-30 08:43:37'),
+(4, 4, 'simple', '920-007147', 0, 0, '2021-03-30 07:28:46', '2021-03-30 08:44:07'),
+(5, 4, 'simple', '920-009275', 0, 0, '2021-03-30 07:33:30', '2021-03-30 08:41:24');
 
 -- --------------------------------------------------------
 
@@ -1409,11 +1409,11 @@ CREATE TABLE `m2_catalog_product_entity_media_gallery_value` (
 --
 
 INSERT INTO `m2_catalog_product_entity_media_gallery_value` (`value_id`, `store_id`, `entity_id`, `label`, `position`, `disabled`, `record_id`) VALUES
-(1, 0, 1, NULL, 1, 0, 1),
-(2, 0, 2, NULL, 1, 0, 8),
-(3, 0, 3, NULL, 1, 0, 9),
-(4, 0, 4, NULL, 1, 0, 10),
-(5, 0, 5, NULL, 1, 0, 11);
+(5, 0, 5, NULL, 1, 0, 13),
+(1, 0, 1, NULL, 1, 0, 14),
+(2, 0, 2, NULL, 1, 0, 15),
+(3, 0, 3, NULL, 1, 0, 17),
+(4, 0, 4, NULL, 1, 0, 18);
 
 -- --------------------------------------------------------
 
@@ -1716,10 +1716,15 @@ CREATE TABLE `m2_catalog_product_index_eav_replica` (
 
 INSERT INTO `m2_catalog_product_index_eav_replica` (`entity_id`, `attribute_id`, `store_id`, `value`, `source_id`) VALUES
 (1, 99, 1, 4, 1),
+(1, 99, 2, 4, 1),
 (2, 99, 1, 4, 2),
+(2, 99, 2, 4, 2),
 (3, 99, 1, 4, 3),
+(3, 99, 2, 4, 3),
 (4, 99, 1, 4, 4),
-(5, 99, 1, 4, 5);
+(4, 99, 2, 4, 4),
+(5, 99, 1, 4, 5),
+(5, 99, 2, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -1759,25 +1764,45 @@ CREATE TABLE `m2_catalog_product_index_price` (
 
 INSERT INTO `m2_catalog_product_index_price` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`) VALUES
 (1, 0, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 0, 2, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
 (1, 1, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 1, 2, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
 (1, 2, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 2, 2, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
 (1, 3, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 3, 2, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
 (2, 0, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 0, 2, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
 (2, 1, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 1, 2, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
 (2, 2, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 2, 2, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
 (2, 3, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 3, 2, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
 (3, 0, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 0, 2, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
 (3, 1, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 1, 2, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
 (3, 2, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 2, 2, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
 (3, 3, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 3, 2, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
 (4, 0, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 0, 2, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
 (4, 1, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 1, 2, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
 (4, 2, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 2, 2, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
 (4, 3, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 3, 2, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
 (5, 0, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 0, 2, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
 (5, 1, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 1, 2, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
 (5, 2, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
-(5, 3, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL);
+(5, 2, 2, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 3, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 3, 2, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL);
 
 -- --------------------------------------------------------
 
@@ -2125,25 +2150,45 @@ CREATE TABLE `m2_catalog_product_index_price_replica` (
 
 INSERT INTO `m2_catalog_product_index_price_replica` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`) VALUES
 (1, 0, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 0, 2, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
 (1, 1, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 1, 2, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
 (1, 2, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 2, 2, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
 (1, 3, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 3, 2, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
 (2, 0, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 0, 2, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
 (2, 1, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 1, 2, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
 (2, 2, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 2, 2, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
 (2, 3, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 3, 2, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
 (3, 0, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 0, 2, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
 (3, 1, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 1, 2, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
 (3, 2, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 2, 2, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
 (3, 3, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 3, 2, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
 (4, 0, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 0, 2, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
 (4, 1, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 1, 2, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
 (4, 2, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 2, 2, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
 (4, 3, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 3, 2, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
 (5, 0, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 0, 2, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
 (5, 1, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 1, 2, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
 (5, 2, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
-(5, 3, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL);
+(5, 2, 2, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 3, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 3, 2, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL);
 
 -- --------------------------------------------------------
 
@@ -2447,10 +2492,15 @@ CREATE TABLE `m2_catalog_product_website` (
 
 INSERT INTO `m2_catalog_product_website` (`product_id`, `website_id`) VALUES
 (1, 1),
+(1, 2),
 (2, 1),
+(2, 2),
 (3, 1),
+(3, 2),
 (4, 1),
-(5, 1);
+(4, 2),
+(5, 1),
+(5, 2);
 
 -- --------------------------------------------------------
 
@@ -2469,11 +2519,16 @@ CREATE TABLE `m2_catalog_url_rewrite_product_category` (
 --
 
 INSERT INTO `m2_catalog_url_rewrite_product_category` (`url_rewrite_id`, `category_id`, `product_id`) VALUES
-(14, 4, 1),
-(16, 4, 2),
-(18, 4, 3),
-(20, 4, 4),
-(22, 4, 5);
+(29, 4, 5),
+(31, 4, 5),
+(33, 4, 1),
+(35, 4, 1),
+(37, 4, 2),
+(39, 4, 2),
+(41, 4, 3),
+(43, 4, 3),
+(45, 4, 4),
+(47, 4, 4);
 
 -- --------------------------------------------------------
 
@@ -6224,11 +6279,11 @@ CREATE TABLE `m2_email_catalog` (
 --
 
 INSERT INTO `m2_email_catalog` (`id`, `product_id`, `processed`, `created_at`, `updated_at`, `last_imported_at`) VALUES
-(1, 1, 0, '2021-03-30 07:15:43', '2021-03-30 07:15:43', NULL),
-(2, 2, 0, '2021-03-30 07:21:01', '2021-03-30 08:35:39', NULL),
-(3, 3, 0, '2021-03-30 07:24:53', '2021-03-30 08:36:10', NULL),
-(4, 4, 0, '2021-03-30 07:28:46', '2021-03-30 08:36:34', NULL),
-(5, 5, 0, '2021-03-30 07:33:31', '2021-03-30 08:37:08', NULL);
+(1, 1, 0, '2021-03-30 07:15:43', '2021-03-30 08:42:15', NULL),
+(2, 2, 0, '2021-03-30 07:21:01', '2021-03-30 08:42:57', NULL),
+(3, 3, 0, '2021-03-30 07:24:53', '2021-03-30 08:43:38', NULL),
+(4, 4, 0, '2021-03-30 07:28:46', '2021-03-30 08:44:08', NULL),
+(5, 5, 0, '2021-03-30 07:33:31', '2021-03-30 08:41:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -6531,17 +6586,17 @@ CREATE TABLE `m2_indexer_state` (
 --
 
 INSERT INTO `m2_indexer_state` (`state_id`, `indexer_id`, `status`, `updated`, `hash_config`) VALUES
-(1, 'design_config_grid', 'valid', '2021-03-30 08:02:00', '16201561936f870b8af9d9b318b045fe'),
-(2, 'customer_grid', 'valid', '2021-03-30 08:02:00', 'fde1ac8ad04b9955a16384d4f3fad919'),
-(3, 'catalog_category_product', 'valid', '2021-03-30 08:02:01', 'ec755bfdfaf18adf5e04b2c115d40123'),
-(4, 'catalog_product_category', 'valid', '2021-03-30 08:02:01', 'a714504088ecffadc773563b1b40af1a'),
-(5, 'catalogrule_rule', 'valid', '2021-03-30 08:02:01', '04eaaebbfb310d7b8fdc15d02ffd40c3'),
-(6, 'catalog_product_attribute', 'valid', '2021-03-30 08:02:01', '6b50e3a39836846867dc9cdb421e1a66'),
-(7, 'cataloginventory_stock', 'valid', '2021-03-30 08:02:01', '7012dc0f794184a72a338804ca47aa1f'),
-(8, 'inventory', 'valid', '2021-03-30 08:02:01', 'd2bb662301c5d7054108c9c265ff99b9'),
-(9, 'catalogrule_product', 'valid', '2021-03-30 08:02:01', '4a8f5ba504e7d0b765d6f80e7522d719'),
-(10, 'catalog_product_price', 'valid', '2021-03-30 08:02:02', '643249ec448555e87ecc0312da1c75d7'),
-(11, 'catalogsearch_fulltext', 'valid', '2021-03-30 08:02:03', '238efca417edeb4be29e373736a95eb8');
+(1, 'design_config_grid', 'valid', '2021-03-30 08:44:30', '16201561936f870b8af9d9b318b045fe'),
+(2, 'customer_grid', 'valid', '2021-03-30 08:44:30', 'fde1ac8ad04b9955a16384d4f3fad919'),
+(3, 'catalog_category_product', 'valid', '2021-03-30 08:44:31', 'ec755bfdfaf18adf5e04b2c115d40123'),
+(4, 'catalog_product_category', 'valid', '2021-03-30 08:44:31', 'a714504088ecffadc773563b1b40af1a'),
+(5, 'catalogrule_rule', 'valid', '2021-03-30 08:44:31', '04eaaebbfb310d7b8fdc15d02ffd40c3'),
+(6, 'catalog_product_attribute', 'valid', '2021-03-30 08:44:31', '6b50e3a39836846867dc9cdb421e1a66'),
+(7, 'cataloginventory_stock', 'valid', '2021-03-30 08:44:31', '7012dc0f794184a72a338804ca47aa1f'),
+(8, 'inventory', 'valid', '2021-03-30 08:44:31', 'd2bb662301c5d7054108c9c265ff99b9'),
+(9, 'catalogrule_product', 'valid', '2021-03-30 08:44:31', '4a8f5ba504e7d0b765d6f80e7522d719'),
+(10, 'catalog_product_price', 'valid', '2021-03-30 08:44:32', '643249ec448555e87ecc0312da1c75d7'),
+(11, 'catalogsearch_fulltext', 'valid', '2021-03-30 08:44:33', '238efca417edeb4be29e373736a95eb8');
 
 -- --------------------------------------------------------
 
@@ -10574,21 +10629,31 @@ CREATE TABLE `m2_url_rewrite` (
 
 INSERT INTO `m2_url_rewrite` (`url_rewrite_id`, `entity_type`, `entity_id`, `request_path`, `target_path`, `redirect_type`, `store_id`, `description`, `is_autogenerated`, `metadata`) VALUES
 (12, 'category', 4, 'keyboards.html', 'catalog/category/view/id/4', 0, 1, NULL, 1, NULL),
-(13, 'product', 1, 'keyboard-hyperx-alloy-fps-pro-cherry-mx-red-usb.html', 'catalog/product/view/id/1', 0, 1, NULL, 1, NULL),
-(14, 'product', 1, 'keyboards/keyboard-hyperx-alloy-fps-pro-cherry-mx-red-usb.html', 'catalog/product/view/id/1/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
-(15, 'product', 2, 'hyperx-alloy-origins-usb-hyperx-red-hx-kb6rdx-ru.html', 'catalog/product/view/id/2', 0, 1, NULL, 1, NULL),
-(16, 'product', 2, 'keyboards/hyperx-alloy-origins-usb-hyperx-red-hx-kb6rdx-ru.html', 'catalog/product/view/id/2/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
-(17, 'product', 3, 'logitech-g213-prodigy-usb-920-008092.html', 'catalog/product/view/id/3', 0, 1, NULL, 1, NULL),
-(18, 'product', 3, 'keyboards/logitech-g213-prodigy-usb-920-008092.html', 'catalog/product/view/id/3/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
-(19, 'product', 4, 'logitech-touch-k400-plus-black-rus-920-007147.html', 'catalog/product/view/id/4', 0, 1, NULL, 1, NULL),
-(20, 'product', 4, 'keyboards/logitech-touch-k400-plus-black-rus-920-007147.html', 'catalog/product/view/id/4/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
-(21, 'product', 5, 'logitech-k580-slim-multi-device-wireless-graphite-920-009275.html', 'catalog/product/view/id/5', 0, 1, NULL, 1, NULL),
-(22, 'product', 5, 'keyboards/logitech-k580-slim-multi-device-wireless-graphite-920-009275.html', 'catalog/product/view/id/5/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
 (23, 'category', 4, 'keyboards.html', 'catalog/category/view/id/4', 0, 2, NULL, 1, NULL),
 (24, 'cms-page', 1, 'no-route', 'cms/page/view/page_id/1', 0, 2, NULL, 1, NULL),
 (25, 'cms-page', 2, 'home', 'cms/page/view/page_id/2', 0, 2, NULL, 1, NULL),
 (26, 'cms-page', 3, 'enable-cookies', 'cms/page/view/page_id/3', 0, 2, NULL, 1, NULL),
-(27, 'cms-page', 4, 'privacy-policy-cookie-restriction-mode', 'cms/page/view/page_id/4', 0, 2, NULL, 1, NULL);
+(27, 'cms-page', 4, 'privacy-policy-cookie-restriction-mode', 'cms/page/view/page_id/4', 0, 2, NULL, 1, NULL),
+(28, 'product', 5, 'logitech-k580-slim-multi-device-wireless-graphite-920-009275.html', 'catalog/product/view/id/5', 0, 1, NULL, 1, NULL),
+(29, 'product', 5, 'keyboards/logitech-k580-slim-multi-device-wireless-graphite-920-009275.html', 'catalog/product/view/id/5/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
+(30, 'product', 5, 'logitech-k580-slim-multi-device-wireless-graphite-920-009275.html', 'catalog/product/view/id/5', 0, 2, NULL, 1, NULL),
+(31, 'product', 5, 'keyboards/logitech-k580-slim-multi-device-wireless-graphite-920-009275.html', 'catalog/product/view/id/5/category/4', 0, 2, NULL, 1, '{\"category_id\":\"4\"}'),
+(32, 'product', 1, 'keyboard-hyperx-alloy-fps-pro-cherry-mx-red-usb.html', 'catalog/product/view/id/1', 0, 1, NULL, 1, NULL),
+(33, 'product', 1, 'keyboards/keyboard-hyperx-alloy-fps-pro-cherry-mx-red-usb.html', 'catalog/product/view/id/1/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
+(34, 'product', 1, 'keyboard-hyperx-alloy-fps-pro-cherry-mx-red-usb.html', 'catalog/product/view/id/1', 0, 2, NULL, 1, NULL),
+(35, 'product', 1, 'keyboards/keyboard-hyperx-alloy-fps-pro-cherry-mx-red-usb.html', 'catalog/product/view/id/1/category/4', 0, 2, NULL, 1, '{\"category_id\":\"4\"}'),
+(36, 'product', 2, 'hyperx-alloy-origins-usb-hyperx-red-hx-kb6rdx-ru.html', 'catalog/product/view/id/2', 0, 1, NULL, 1, NULL),
+(37, 'product', 2, 'keyboards/hyperx-alloy-origins-usb-hyperx-red-hx-kb6rdx-ru.html', 'catalog/product/view/id/2/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
+(38, 'product', 2, 'hyperx-alloy-origins-usb-hyperx-red-hx-kb6rdx-ru.html', 'catalog/product/view/id/2', 0, 2, NULL, 1, NULL),
+(39, 'product', 2, 'keyboards/hyperx-alloy-origins-usb-hyperx-red-hx-kb6rdx-ru.html', 'catalog/product/view/id/2/category/4', 0, 2, NULL, 1, '{\"category_id\":\"4\"}'),
+(40, 'product', 3, 'logitech-g213-prodigy-usb-920-008092.html', 'catalog/product/view/id/3', 0, 1, NULL, 1, NULL),
+(41, 'product', 3, 'keyboards/logitech-g213-prodigy-usb-920-008092.html', 'catalog/product/view/id/3/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
+(42, 'product', 3, 'logitech-g213-prodigy-usb-920-008092.html', 'catalog/product/view/id/3', 0, 2, NULL, 1, NULL),
+(43, 'product', 3, 'keyboards/logitech-g213-prodigy-usb-920-008092.html', 'catalog/product/view/id/3/category/4', 0, 2, NULL, 1, '{\"category_id\":\"4\"}'),
+(44, 'product', 4, 'logitech-touch-k400-plus-black-rus-920-007147.html', 'catalog/product/view/id/4', 0, 1, NULL, 1, NULL),
+(45, 'product', 4, 'keyboards/logitech-touch-k400-plus-black-rus-920-007147.html', 'catalog/product/view/id/4/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
+(46, 'product', 4, 'logitech-touch-k400-plus-black-rus-920-007147.html', 'catalog/product/view/id/4', 0, 2, NULL, 1, NULL),
+(47, 'product', 4, 'keyboards/logitech-touch-k400-plus-black-rus-920-007147.html', 'catalog/product/view/id/4/category/4', 0, 2, NULL, 1, '{\"category_id\":\"4\"}');
 
 -- --------------------------------------------------------
 
@@ -11406,16 +11471,16 @@ ALTER TABLE `m2_catalog_category_product_index_replica`
 --
 ALTER TABLE `m2_catalog_category_product_index_store1`
   ADD PRIMARY KEY (`category_id`,`product_id`,`store_id`),
-  ADD KEY `IDX_141777C1549D4C3425ED5AFCE9F03C18` (`product_id`,`store_id`,`category_id`,`visibility`),
-  ADD KEY `IDX_FE485F24D6363D3186B87EA601BE56B2` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`);
+  ADD KEY `M2_CAT_CTGR_PRD_IDX_STORE1_PRD_ID_STORE_ID_CTGR_ID_VISIBILITY` (`product_id`,`store_id`,`category_id`,`visibility`),
+  ADD KEY `IDX_89C0E4A586074B621C05FE619315494D` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`);
 
 --
 -- Indexes for table `m2_catalog_category_product_index_store1_replica`
 --
 ALTER TABLE `m2_catalog_category_product_index_store1_replica`
   ADD PRIMARY KEY (`category_id`,`product_id`,`store_id`),
-  ADD KEY `M2_CAT_CTGR_PRD_IDX_STORE1_PRD_ID_STORE_ID_CTGR_ID_VISIBILITY` (`product_id`,`store_id`,`category_id`,`visibility`),
-  ADD KEY `IDX_89C0E4A586074B621C05FE619315494D` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`);
+  ADD KEY `IDX_141777C1549D4C3425ED5AFCE9F03C18` (`product_id`,`store_id`,`category_id`,`visibility`),
+  ADD KEY `IDX_FE485F24D6363D3186B87EA601BE56B2` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`);
 
 --
 -- Indexes for table `m2_catalog_category_product_index_tmp`
@@ -14548,7 +14613,7 @@ ALTER TABLE `m2_catalog_product_entity_media_gallery`
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_media_gallery_value`
 --
 ALTER TABLE `m2_catalog_product_entity_media_gallery_value`
-  MODIFY `record_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Record ID', AUTO_INCREMENT=12;
+  MODIFY `record_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Record ID', AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_text`
@@ -14566,7 +14631,7 @@ ALTER TABLE `m2_catalog_product_entity_tier_price`
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_varchar`
 --
 ALTER TABLE `m2_catalog_product_entity_varchar`
-  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=103;
+  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=131;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_product_frontend_action`
@@ -15124,7 +15189,7 @@ ALTER TABLE `m2_inventory_source_carrier_link`
 -- AUTO_INCREMENT for table `m2_inventory_source_item`
 --
 ALTER TABLE `m2_inventory_source_item`
-  MODIFY `source_item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `source_item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `m2_inventory_source_stock_link`
@@ -15928,7 +15993,7 @@ ALTER TABLE `m2_ui_bookmark`
 -- AUTO_INCREMENT for table `m2_url_rewrite`
 --
 ALTER TABLE `m2_url_rewrite`
-  MODIFY `url_rewrite_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Rewrite ID', AUTO_INCREMENT=28;
+  MODIFY `url_rewrite_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Rewrite ID', AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `m2_variable`
