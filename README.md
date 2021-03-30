@@ -57,12 +57,12 @@ These settings most be enabled for all your sites in the future.
 mkcert <BASE_DOMAIN_NAME>.local <BASE_DOMAIN_NAME>-<SUBNAME>.local www.<BASE_DOMAIN_NAME>-<SUBNAME>.local
 ```
 6. Edit **extra_hosts** and Hosts in **labels** of Traefik.
-7. Execute command from terminal in your project root directory
+7. Execute command from terminal in your project root directory.
 ```bash
 docker-compose down && docker-compose up -d --force-recreate
 ```
 8. Increase certificate counts for your **<BASE_DOMAIN_NAME>** in **.../misc/apps/docker_infrastructure/local_infrastructure/configuration/certificates.toml**
-9. Add next configuration to **.htaccess** in your project root directory
+9. Add next configuration to **.htaccess** in your project root directory.
 
 ```apacheconf
 SetEnvIf Host .*<BASE_DOMAIN_NAME>.local.* MAGE_RUN_CODE=base
@@ -71,4 +71,4 @@ SetEnvIf Host .*<BASE_DOMAIN_NAME>.local.* MAGE_RUN_TYPE=website
 SetEnvIf Host .*<BASE_DOMAIN_NAME>-<SUBNAME>.local.* MAGE_RUN_CODE=<YOUR_WEBSITE_CODE>
 SetEnvIf Host .*<BASE_DOMAIN_NAME>-<SUBNAME>.local.* MAGE_RUN_TYPE=website
 ```
-10. Clear cache
+10. Clear cache, reindex and refresh your site in browser.
