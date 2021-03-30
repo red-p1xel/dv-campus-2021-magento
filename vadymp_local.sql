@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb104
--- Generation Time: Mar 29, 2021 at 01:16 PM
+-- Generation Time: Mar 30, 2021 at 07:52 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -55,6 +55,13 @@ CREATE TABLE `m2_admin_analytics_usage_version_log` (
   `id` int(10) UNSIGNED NOT NULL COMMENT 'Log ID',
   `last_viewed_in_version` varchar(50) NOT NULL COMMENT 'Viewer last viewed on product version'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Admin Notification Viewer Log Table';
+
+--
+-- Dumping data for table `m2_admin_analytics_usage_version_log`
+--
+
+INSERT INTO `m2_admin_analytics_usage_version_log` (`id`, `last_viewed_in_version`) VALUES
+(1, '2.4.2');
 
 -- --------------------------------------------------------
 
@@ -123,7 +130,7 @@ CREATE TABLE `m2_admin_user` (
 --
 
 INSERT INTO `m2_admin_user` (`user_id`, `firstname`, `lastname`, `email`, `username`, `password`, `created`, `modified`, `logdate`, `lognum`, `reload_acl_flag`, `is_active`, `extra`, `rp_token`, `rp_token_created_at`, `interface_locale`, `failures_num`, `first_failure`, `lock_expires`, `refresh_token`) VALUES
-(1, 'Magento', 'Administrator', 'email@example.com', 'development', 'cd322348baa0943421a10f4a5d42c658ccf7109f2ca679abb7fb610fcfc3f5a2:CXNNSmOHphCjXJybmfZbv4jG7mHHaUry:3_32_2_67108864', '2021-03-26 18:05:58', '2021-03-29 11:18:53', '2021-03-29 11:18:53', 1, 0, 1, NULL, NULL, NULL, 'en_US', 0, NULL, NULL, NULL);
+(1, 'Magento', 'Administrator', 'email@example.com', 'development', 'cd322348baa0943421a10f4a5d42c658ccf7109f2ca679abb7fb610fcfc3f5a2:CXNNSmOHphCjXJybmfZbv4jG7mHHaUry:3_32_2_67108864', '2021-03-26 18:05:58', '2021-03-30 06:54:23', '2021-03-30 06:36:24', 5, 0, 1, '{\"configState\":{\"currency_options\":\"1\",\"currency_fixerio\":\"0\",\"currency_currencyconverterapi\":\"0\",\"currency_import\":\"0\"}}', NULL, NULL, 'en_US', 0, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -157,7 +164,11 @@ CREATE TABLE `m2_admin_user_session` (
 --
 
 INSERT INTO `m2_admin_user_session` (`id`, `session_id`, `user_id`, `status`, `created_at`, `updated_at`, `ip`) VALUES
-(1, 'eikabgbvkds7jg5a7d3ab6f586', 1, 1, '2021-03-29 11:18:53', '2021-03-29 11:18:53', '172.17.0.10');
+(1, 'eikabgbvkds7jg5a7d3ab6f586', 1, 1, '2021-03-29 11:18:53', '2021-03-29 11:18:53', '172.17.0.10'),
+(2, 'j7s1q59c3753r0pnhrmdb14cub', 1, 1, '2021-03-29 14:38:32', '2021-03-29 14:38:32', '172.17.0.10'),
+(3, 'osavo0470391hq8b14409s1mtl', 1, 0, '2021-03-29 15:06:36', '2021-03-29 15:14:23', '172.17.0.10'),
+(4, '222fq5kq4qngijh4333nieb3le', 1, 1, '2021-03-29 15:14:47', '2021-03-29 15:15:53', '172.17.0.10'),
+(5, 'qc5f40jb3rqbfshf19hht41pb7', 1, 1, '2021-03-30 06:36:24', '2021-03-30 07:47:03', '172.17.0.10');
 
 -- --------------------------------------------------------
 
@@ -466,6 +477,17 @@ CREATE TABLE `m2_cataloginventory_stock_item` (
   `website_id` smallint(5) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Website ID'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Cataloginventory Stock Item';
 
+--
+-- Dumping data for table `m2_cataloginventory_stock_item`
+--
+
+INSERT INTO `m2_cataloginventory_stock_item` (`item_id`, `product_id`, `stock_id`, `qty`, `min_qty`, `use_config_min_qty`, `is_qty_decimal`, `backorders`, `use_config_backorders`, `min_sale_qty`, `use_config_min_sale_qty`, `max_sale_qty`, `use_config_max_sale_qty`, `is_in_stock`, `low_stock_date`, `notify_stock_qty`, `use_config_notify_stock_qty`, `manage_stock`, `use_config_manage_stock`, `stock_status_changed_auto`, `use_config_qty_increments`, `qty_increments`, `use_config_enable_qty_inc`, `enable_qty_increments`, `is_decimal_divided`, `website_id`) VALUES
+(1, 1, 1, '256.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '10000.0000', 1, 1, NULL, '1.0000', 1, 1, 1, 0, 1, '1.0000', 1, 0, 0, 0),
+(2, 2, 1, '256.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '10000.0000', 1, 1, NULL, '1.0000', 1, 1, 1, 0, 1, '1.0000', 1, 0, 0, 0),
+(3, 3, 1, '256.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '10000.0000', 1, 1, NULL, '1.0000', 1, 1, 1, 0, 1, '1.0000', 1, 0, 0, 0),
+(4, 4, 1, '256.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '10000.0000', 1, 1, NULL, '1.0000', 1, 1, 1, 0, 1, '1.0000', 1, 0, 0, 0),
+(5, 5, 1, '256.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '10000.0000', 1, 1, NULL, '1.0000', 1, 1, 1, 0, 1, '1.0000', 1, 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -479,6 +501,17 @@ CREATE TABLE `m2_cataloginventory_stock_status` (
   `qty` decimal(12,4) NOT NULL DEFAULT 0.0000 COMMENT 'Qty',
   `stock_status` smallint(5) UNSIGNED NOT NULL COMMENT 'Stock Status'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Cataloginventory Stock Status';
+
+--
+-- Dumping data for table `m2_cataloginventory_stock_status`
+--
+
+INSERT INTO `m2_cataloginventory_stock_status` (`product_id`, `website_id`, `stock_id`, `qty`, `stock_status`) VALUES
+(1, 0, 1, '256.0000', 1),
+(2, 0, 1, '256.0000', 1),
+(3, 0, 1, '256.0000', 1),
+(4, 0, 1, '256.0000', 1),
+(5, 0, 1, '256.0000', 1);
 
 -- --------------------------------------------------------
 
@@ -507,6 +540,17 @@ CREATE TABLE `m2_cataloginventory_stock_status_replica` (
   `qty` decimal(12,4) NOT NULL DEFAULT 0.0000 COMMENT 'Qty',
   `stock_status` smallint(5) UNSIGNED NOT NULL COMMENT 'Stock Status'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Cataloginventory Stock Status';
+
+--
+-- Dumping data for table `m2_cataloginventory_stock_status_replica`
+--
+
+INSERT INTO `m2_cataloginventory_stock_status_replica` (`product_id`, `website_id`, `stock_id`, `qty`, `stock_status`) VALUES
+(1, 0, 1, '256.0000', 1),
+(2, 0, 1, '256.0000', 1),
+(3, 0, 1, '256.0000', 1),
+(4, 0, 1, '256.0000', 1),
+(5, 0, 1, '256.0000', 1);
 
 -- --------------------------------------------------------
 
@@ -698,8 +742,10 @@ CREATE TABLE `m2_catalog_category_entity` (
 --
 
 INSERT INTO `m2_catalog_category_entity` (`entity_id`, `attribute_set_id`, `parent_id`, `created_at`, `updated_at`, `path`, `position`, `level`, `children_count`) VALUES
-(1, 3, 0, '2021-03-26 18:05:53', '2021-03-26 18:05:53', '1', 0, 0, 1),
-(2, 3, 1, '2021-03-26 18:05:53', '2021-03-26 18:05:53', '1/2', 1, 1, 0);
+(1, 3, 0, '2021-03-26 18:05:53', '2021-03-30 07:11:28', '1', 0, 0, 3),
+(2, 3, 1, '2021-03-26 18:05:53', '2021-03-26 18:05:53', '1/2', 1, 1, 0),
+(3, 3, 1, '2021-03-30 07:07:28', '2021-03-30 07:11:28', '1/3', 2, 1, 1),
+(4, 3, 3, '2021-03-30 07:11:28', '2021-03-30 07:11:28', '1/3/4', 1, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -750,7 +796,17 @@ CREATE TABLE `m2_catalog_category_entity_int` (
 INSERT INTO `m2_catalog_category_entity_int` (`value_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES
 (1, 69, 0, 1, 1),
 (2, 46, 0, 2, 1),
-(3, 69, 0, 2, 1);
+(3, 69, 0, 2, 1),
+(4, 46, 0, 3, 1),
+(5, 54, 0, 3, 1),
+(6, 69, 0, 3, 1),
+(7, 70, 0, 3, 0),
+(8, 71, 0, 3, 0),
+(9, 46, 0, 4, 1),
+(10, 54, 0, 4, 1),
+(11, 69, 0, 4, 1),
+(12, 70, 0, 4, 0),
+(13, 71, 0, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -765,6 +821,14 @@ CREATE TABLE `m2_catalog_category_entity_text` (
   `entity_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Entity ID',
   `value` mediumtext DEFAULT NULL COMMENT 'Value'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Text Attribute Backend Table';
+
+--
+-- Dumping data for table `m2_catalog_category_entity_text`
+--
+
+INSERT INTO `m2_catalog_category_entity_text` (`value_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES
+(1, 47, 0, 3, '<p>Computer hardware and perepherial</p>'),
+(2, 47, 0, 4, '<p>This category contain the wireless and wired keyboards for different targets like coding / gaming or other.</p>');
 
 -- --------------------------------------------------------
 
@@ -787,7 +851,17 @@ CREATE TABLE `m2_catalog_category_entity_varchar` (
 INSERT INTO `m2_catalog_category_entity_varchar` (`value_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES
 (1, 45, 0, 1, 'Root Catalog'),
 (2, 45, 0, 2, 'Default Category'),
-(3, 52, 0, 2, 'PRODUCTS');
+(3, 52, 0, 2, 'PRODUCTS'),
+(4, 45, 0, 3, 'Hardware'),
+(5, 48, 0, 3, '/media/catalog/category/maxresdefault.jpg'),
+(6, 52, 0, 3, 'PRODUCTS'),
+(7, 60, 0, 3, '1'),
+(8, 119, 0, 3, 'hardware'),
+(9, 45, 0, 4, 'Keyboards'),
+(10, 48, 0, 4, '/media/catalog/category/keyb_3.jpg'),
+(11, 52, 0, 4, 'PRODUCTS'),
+(12, 119, 0, 4, 'keyboards'),
+(13, 120, 0, 4, 'keyboards');
 
 -- --------------------------------------------------------
 
@@ -801,6 +875,22 @@ CREATE TABLE `m2_catalog_category_product` (
   `product_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Product ID',
   `position` int(11) NOT NULL DEFAULT 0 COMMENT 'Position'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product To Category Linkage Table';
+
+--
+-- Dumping data for table `m2_catalog_category_product`
+--
+
+INSERT INTO `m2_catalog_category_product` (`entity_id`, `category_id`, `product_id`, `position`) VALUES
+(1, 3, 1, 0),
+(2, 4, 1, 0),
+(3, 3, 2, 0),
+(4, 4, 2, 0),
+(5, 3, 3, 0),
+(6, 4, 3, 0),
+(7, 3, 5, 0),
+(8, 4, 5, 0),
+(9, 3, 4, 0),
+(10, 4, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -847,6 +937,22 @@ CREATE TABLE `m2_catalog_category_product_index_store1` (
   `visibility` smallint(5) UNSIGNED NOT NULL COMMENT 'Visibility'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='M2 Catalog Category Product Index Store1';
 
+--
+-- Dumping data for table `m2_catalog_category_product_index_store1`
+--
+
+INSERT INTO `m2_catalog_category_product_index_store1` (`category_id`, `product_id`, `position`, `is_parent`, `store_id`, `visibility`) VALUES
+(3, 1, 0, 0, 1, 4),
+(3, 2, 0, 0, 1, 4),
+(3, 3, 0, 0, 1, 4),
+(3, 4, 0, 0, 1, 4),
+(3, 5, 0, 0, 1, 4),
+(4, 1, 0, 1, 1, 4),
+(4, 2, 0, 1, 1, 4),
+(4, 3, 0, 1, 1, 4),
+(4, 4, 0, 1, 1, 4),
+(4, 5, 0, 1, 1, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -861,6 +967,22 @@ CREATE TABLE `m2_catalog_category_product_index_store1_replica` (
   `store_id` smallint(5) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Store Id',
   `visibility` smallint(5) UNSIGNED NOT NULL COMMENT 'Visibility'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='M2 Catalog Category Product Index Store1 Replica';
+
+--
+-- Dumping data for table `m2_catalog_category_product_index_store1_replica`
+--
+
+INSERT INTO `m2_catalog_category_product_index_store1_replica` (`category_id`, `product_id`, `position`, `is_parent`, `store_id`, `visibility`) VALUES
+(2, 1, 0, 1, 1, 4),
+(2, 2, 0, 1, 1, 4),
+(2, 3, 0, 1, 1, 4),
+(2, 4, 0, 1, 1, 4),
+(2, 5, 0, 1, 1, 4),
+(3, 1, 0, 0, 1, 4),
+(3, 2, 0, 0, 1, 4),
+(3, 3, 0, 0, 1, 4),
+(3, 4, 0, 0, 1, 4),
+(3, 5, 0, 0, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -1141,6 +1263,17 @@ CREATE TABLE `m2_catalog_product_entity` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Update Time'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Table';
 
+--
+-- Dumping data for table `m2_catalog_product_entity`
+--
+
+INSERT INTO `m2_catalog_product_entity` (`entity_id`, `attribute_set_id`, `type_id`, `sku`, `has_options`, `required_options`, `created_at`, `updated_at`) VALUES
+(1, 4, 'simple', 'Keyboard HyperX Alloy FPS Pro Cherry MX Red USB', 0, 0, '2021-03-30 07:15:42', '2021-03-30 07:15:42'),
+(2, 4, 'simple', 'HyperX Alloy Origins USB HyperX Red (HX-KB6RDX-RU)', 0, 0, '2021-03-30 07:21:00', '2021-03-30 07:21:00'),
+(3, 4, 'simple', 'Logitech G213 Prodigy USB (920-008092)', 0, 0, '2021-03-30 07:24:53', '2021-03-30 07:24:53'),
+(4, 4, 'simple', 'Logitech Touch K400 Plus Black RUS (920-007147)', 0, 0, '2021-03-30 07:28:46', '2021-03-30 07:34:43'),
+(5, 4, 'simple', 'Logitech K580 Slim Multi-Device Wireless Graphite (920-009275)', 0, 0, '2021-03-30 07:33:30', '2021-03-30 07:33:58');
+
 -- --------------------------------------------------------
 
 --
@@ -1168,6 +1301,17 @@ CREATE TABLE `m2_catalog_product_entity_decimal` (
   `entity_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Entity ID',
   `value` decimal(20,6) DEFAULT NULL COMMENT 'Value'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Decimal Attribute Backend Table';
+
+--
+-- Dumping data for table `m2_catalog_product_entity_decimal`
+--
+
+INSERT INTO `m2_catalog_product_entity_decimal` (`value_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES
+(1, 77, 0, 1, '2799.000000'),
+(2, 77, 0, 2, '3699.000000'),
+(3, 77, 0, 3, '1799.000000'),
+(4, 77, 0, 4, '999.000000'),
+(5, 77, 0, 5, '1669.000000');
 
 -- --------------------------------------------------------
 
@@ -1198,6 +1342,27 @@ CREATE TABLE `m2_catalog_product_entity_int` (
   `value` int(11) DEFAULT NULL COMMENT 'Value'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Integer Attribute Backend Table';
 
+--
+-- Dumping data for table `m2_catalog_product_entity_int`
+--
+
+INSERT INTO `m2_catalog_product_entity_int` (`value_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES
+(1, 97, 0, 1, 1),
+(2, 99, 0, 1, 4),
+(3, 136, 0, 1, 2),
+(4, 97, 0, 2, 1),
+(5, 99, 0, 2, 4),
+(6, 136, 0, 2, 2),
+(7, 97, 0, 3, 1),
+(8, 99, 0, 3, 4),
+(9, 136, 0, 3, 2),
+(10, 97, 0, 4, 1),
+(11, 99, 0, 4, 4),
+(12, 136, 0, 4, 2),
+(13, 97, 0, 5, 1),
+(14, 99, 0, 5, 4),
+(15, 136, 0, 5, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -1211,6 +1376,17 @@ CREATE TABLE `m2_catalog_product_entity_media_gallery` (
   `media_type` varchar(32) NOT NULL DEFAULT 'image' COMMENT 'Media entry type',
   `disabled` smallint(5) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Visibility status'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Media Gallery Attribute Backend Table';
+
+--
+-- Dumping data for table `m2_catalog_product_entity_media_gallery`
+--
+
+INSERT INTO `m2_catalog_product_entity_media_gallery` (`value_id`, `attribute_id`, `value`, `media_type`, `disabled`) VALUES
+(1, 90, '/k/e/keyb_1.jpg', 'image', 0),
+(2, 90, '/k/e/keyb_2.jpg', 'image', 0),
+(3, 90, '/k/e/keyb_3.jpg', 'image', 0),
+(4, 90, '/l/o/logitech_920_007147_images_15865882586.jpg', 'image', 0),
+(5, 90, '/l/o/logitech_920_009275_images_20106372041.jpg', 'image', 0);
 
 -- --------------------------------------------------------
 
@@ -1228,6 +1404,17 @@ CREATE TABLE `m2_catalog_product_entity_media_gallery_value` (
   `record_id` int(10) UNSIGNED NOT NULL COMMENT 'Record ID'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Media Gallery Attribute Value Table';
 
+--
+-- Dumping data for table `m2_catalog_product_entity_media_gallery_value`
+--
+
+INSERT INTO `m2_catalog_product_entity_media_gallery_value` (`value_id`, `store_id`, `entity_id`, `label`, `position`, `disabled`, `record_id`) VALUES
+(1, 0, 1, NULL, 1, 0, 1),
+(2, 0, 2, NULL, 1, 0, 2),
+(3, 0, 3, NULL, 1, 0, 3),
+(5, 0, 5, NULL, 1, 0, 6),
+(4, 0, 4, NULL, 1, 0, 7);
+
 -- --------------------------------------------------------
 
 --
@@ -1238,6 +1425,17 @@ CREATE TABLE `m2_catalog_product_entity_media_gallery_value_to_entity` (
   `value_id` int(10) UNSIGNED NOT NULL COMMENT 'Value media Entry ID',
   `entity_id` int(10) UNSIGNED NOT NULL COMMENT 'Product Entity ID'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Link Media value to Product entity table';
+
+--
+-- Dumping data for table `m2_catalog_product_entity_media_gallery_value_to_entity`
+--
+
+INSERT INTO `m2_catalog_product_entity_media_gallery_value_to_entity` (`value_id`, `entity_id`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
 
 -- --------------------------------------------------------
 
@@ -1268,6 +1466,25 @@ CREATE TABLE `m2_catalog_product_entity_text` (
   `entity_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Entity ID',
   `value` mediumtext DEFAULT NULL COMMENT 'Value'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Text Attribute Backend Table';
+
+--
+-- Dumping data for table `m2_catalog_product_entity_text`
+--
+
+INSERT INTO `m2_catalog_product_entity_text` (`value_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES
+(1, 75, 0, 1, '<p>detailed description for product <strong>Keyboard HyperX Alloy FPS Pro Cherry MX Red USB</strong></p>'),
+(2, 76, 0, 1, '<p>Short description for <strong>Keyboard HyperX Alloy FPS Pro Cherry MX Red USB</strong></p>'),
+(3, 85, 0, 1, 'Keyboard HyperX Alloy FPS Pro Cherry MX Red USB'),
+(4, 85, 0, 2, 'Wired keyboard HyperX Alloy Origins USB HyperX Red (HX-KB6RDX-RU)'),
+(5, 75, 0, 3, '<p>Wired keyboard <strong>Logitech G213 Prodigy USB (920-008092)</strong> with higlighted keys.</p>'),
+(6, 76, 0, 3, '<p>Wired keyboard <strong>Logitech G213 Prodigy USB (920-008092)</strong>.</p>'),
+(7, 85, 0, 3, 'Logitech G213 Prodigy USB (920-008092)'),
+(8, 75, 0, 4, '<p>Wireless keyboard <strong>Logitech Touch K400 Plus Black RUS (920-007147) </strong>with touchpad.</p>'),
+(9, 76, 0, 4, '<p>Wireless keyboard <strong>Logitech Touch K400 Plus Black RUS (920-007147)</strong></p>'),
+(10, 85, 0, 4, 'Logitech Touch K400 Plus Black RUS (920-007147)'),
+(11, 75, 0, 5, '<p>Wireless keyboard <strong>Logitech K580 Slim Multi-Device Wireless Graphite (920-009275) </strong>with phone stand.</p>'),
+(12, 76, 0, 5, '<p>Wireless keyboard <strong>Logitech K580 Slim Multi-Device Wireless Graphite (920-009275)</strong>.</p>'),
+(13, 85, 0, 5, 'Logitech K580 Slim Multi-Device Wireless Graphite (920-009275)');
 
 -- --------------------------------------------------------
 
@@ -1300,6 +1517,70 @@ CREATE TABLE `m2_catalog_product_entity_varchar` (
   `value` varchar(255) DEFAULT NULL COMMENT 'Value'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Varchar Attribute Backend Table';
 
+--
+-- Dumping data for table `m2_catalog_product_entity_varchar`
+--
+
+INSERT INTO `m2_catalog_product_entity_varchar` (`value_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES
+(1, 73, 0, 1, 'Keyboard HyperX Alloy FPS Pro Cherry MX Red USB'),
+(2, 84, 0, 1, 'Keyboard HyperX Alloy FPS Pro Cherry MX Red USB'),
+(3, 86, 0, 1, 'Keyboard HyperX Alloy FPS Pro Cherry MX Red USB detailed description for product Keyboard HyperX Alloy FPS Pro Cherry MX Red USB'),
+(4, 87, 0, 1, '/k/e/keyb_1.jpg'),
+(5, 88, 0, 1, '/k/e/keyb_1.jpg'),
+(6, 89, 0, 1, '/k/e/keyb_1.jpg'),
+(7, 106, 0, 1, 'container2'),
+(8, 121, 0, 1, 'keyboard-hyperx-alloy-fps-pro-cherry-mx-red-usb'),
+(9, 124, 0, 1, '0'),
+(10, 134, 0, 1, '2'),
+(11, 135, 0, 1, '/k/e/keyb_1.jpg'),
+(16, 73, 0, 2, 'HyperX Alloy Origins USB HyperX Red (HX-KB6RDX-RU)'),
+(17, 84, 0, 2, 'Wired keyboard HyperX Alloy Origins USB HyperX Red (HX-KB6RDX-RU)'),
+(18, 86, 0, 2, 'Wired keyboard HyperX Alloy Origins USB HyperX Red (HX-KB6RDX-RU)'),
+(19, 87, 0, 2, '/k/e/keyb_2.jpg'),
+(20, 88, 0, 2, '/k/e/keyb_2.jpg'),
+(21, 89, 0, 2, '/k/e/keyb_2.jpg'),
+(22, 106, 0, 2, 'container2'),
+(23, 114, 0, 2, 'CN'),
+(24, 121, 0, 2, 'hyperx-alloy-origins-usb-hyperx-red-hx-kb6rdx-ru'),
+(25, 124, 0, 2, '0'),
+(26, 134, 0, 2, '2'),
+(27, 135, 0, 2, '/k/e/keyb_2.jpg'),
+(32, 73, 0, 3, 'Logitech G213 Prodigy USB (920-008092)'),
+(33, 84, 0, 3, 'Logitech G213 Prodigy USB (920-008092)'),
+(34, 86, 0, 3, 'Logitech G213 Prodigy USB (920-008092) Wired keyboard Logitech G213 Prodigy USB (920-008092) with higlighted keys.'),
+(35, 87, 0, 3, '/k/e/keyb_3.jpg'),
+(36, 88, 0, 3, '/k/e/keyb_3.jpg'),
+(37, 89, 0, 3, '/k/e/keyb_3.jpg'),
+(38, 106, 0, 3, 'container2'),
+(39, 114, 0, 3, 'CN'),
+(40, 121, 0, 3, 'logitech-g213-prodigy-usb-920-008092'),
+(41, 124, 0, 3, '0'),
+(42, 134, 0, 3, '2'),
+(43, 135, 0, 3, '/k/e/keyb_3.jpg'),
+(48, 73, 0, 4, 'Logitech Touch K400 Plus Black RUS (920-007147)'),
+(49, 84, 0, 4, 'Logitech Touch K400 Plus Black RUS (920-007147)'),
+(50, 86, 0, 4, 'Logitech Touch K400 Plus Black RUS (920-007147) Wireless keyboard Logitech Touch K400 Plus Black RUS (920-007147) with touchpad.'),
+(51, 87, 0, 4, '/l/o/logitech_920_007147_images_15865882586.jpg'),
+(52, 88, 0, 4, '/l/o/logitech_920_007147_images_15865882586.jpg'),
+(53, 89, 0, 4, '/l/o/logitech_920_007147_images_15865882586.jpg'),
+(54, 106, 0, 4, 'container2'),
+(55, 121, 0, 4, 'logitech-touch-k400-plus-black-rus-920-007147'),
+(56, 124, 0, 4, '0'),
+(57, 134, 0, 4, '2'),
+(58, 135, 0, 4, '/l/o/logitech_920_007147_images_15865882586.jpg'),
+(63, 73, 0, 5, 'Logitech K580 Slim Multi-Device Wireless Graphite (920-009275)'),
+(64, 84, 0, 5, 'Logitech K580 Slim Multi-Device Wireless Graphite (920-009275)'),
+(65, 86, 0, 5, 'Logitech K580 Slim Multi-Device Wireless Graphite (920-009275) Wireless keyboard Logitech K580 Slim Multi-Device Wireless Graphite (920-009275) with phone stand.'),
+(66, 87, 0, 5, '/l/o/logitech_920_009275_images_20106372041.jpg'),
+(67, 88, 0, 5, '/l/o/logitech_920_009275_images_20106372041.jpg'),
+(68, 89, 0, 5, '/l/o/logitech_920_009275_images_20106372041.jpg'),
+(69, 106, 0, 5, 'container2'),
+(70, 114, 0, 5, 'CN'),
+(71, 121, 0, 5, 'logitech-k580-slim-multi-device-wireless-graphite-920-009275'),
+(72, 124, 0, 5, '0'),
+(73, 134, 0, 5, '2'),
+(74, 135, 0, 5, '/l/o/logitech_920_009275_images_20106372041.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -1328,6 +1609,17 @@ CREATE TABLE `m2_catalog_product_index_eav` (
   `value` int(10) UNSIGNED NOT NULL COMMENT 'Value',
   `source_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Original entity ID for attribute value'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product EAV Index Table';
+
+--
+-- Dumping data for table `m2_catalog_product_index_eav`
+--
+
+INSERT INTO `m2_catalog_product_index_eav` (`entity_id`, `attribute_id`, `store_id`, `value`, `source_id`) VALUES
+(1, 99, 1, 4, 1),
+(2, 99, 1, 4, 2),
+(3, 99, 1, 4, 3),
+(4, 99, 1, 4, 4),
+(5, 99, 1, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -1413,6 +1705,17 @@ CREATE TABLE `m2_catalog_product_index_eav_replica` (
   `source_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Original entity ID for attribute value'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product EAV Index Table';
 
+--
+-- Dumping data for table `m2_catalog_product_index_eav_replica`
+--
+
+INSERT INTO `m2_catalog_product_index_eav_replica` (`entity_id`, `attribute_id`, `store_id`, `value`, `source_id`) VALUES
+(1, 99, 1, 4, 1),
+(2, 99, 1, 4, 2),
+(3, 99, 1, 4, 3),
+(4, 99, 1, 4, 4),
+(5, 99, 1, 4, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -1444,6 +1747,32 @@ CREATE TABLE `m2_catalog_product_index_price` (
   `max_price` decimal(20,6) DEFAULT NULL COMMENT 'Max Price',
   `tier_price` decimal(20,6) DEFAULT NULL COMMENT 'Tier Price'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Price Index Table';
+
+--
+-- Dumping data for table `m2_catalog_product_index_price`
+--
+
+INSERT INTO `m2_catalog_product_index_price` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`) VALUES
+(1, 0, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 1, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 2, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 3, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(2, 0, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 1, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 2, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 3, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(3, 0, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 1, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 2, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 3, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(4, 0, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 1, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 2, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 3, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(5, 0, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 1, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 2, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 3, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL);
 
 -- --------------------------------------------------------
 
@@ -1785,6 +2114,32 @@ CREATE TABLE `m2_catalog_product_index_price_replica` (
   `tier_price` decimal(20,6) DEFAULT NULL COMMENT 'Tier Price'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Price Index Table';
 
+--
+-- Dumping data for table `m2_catalog_product_index_price_replica`
+--
+
+INSERT INTO `m2_catalog_product_index_price_replica` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`) VALUES
+(1, 0, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 1, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 2, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(1, 3, 1, 2, '2799.000000', '2799.000000', '2799.000000', '2799.000000', NULL),
+(2, 0, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 1, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 2, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(2, 3, 1, 2, '3699.000000', '3699.000000', '3699.000000', '3699.000000', NULL),
+(3, 0, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 1, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 2, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(3, 3, 1, 2, '1799.000000', '1799.000000', '1799.000000', '1799.000000', NULL),
+(4, 0, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 1, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 2, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(4, 3, 1, 2, '999.000000', '999.000000', '999.000000', '999.000000', NULL),
+(5, 0, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 1, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 2, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL),
+(5, 3, 1, 2, '1669.000000', '1669.000000', '1669.000000', '1669.000000', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -1834,7 +2189,7 @@ CREATE TABLE `m2_catalog_product_index_website` (
 --
 
 INSERT INTO `m2_catalog_product_index_website` (`website_id`, `default_store_id`, `website_date`, `rate`) VALUES
-(1, 1, '2021-03-29', 1);
+(1, 1, '2021-03-30', 1);
 
 -- --------------------------------------------------------
 
@@ -2080,6 +2435,17 @@ CREATE TABLE `m2_catalog_product_website` (
   `website_id` smallint(5) UNSIGNED NOT NULL COMMENT 'Website ID'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product To Website Linkage Table';
 
+--
+-- Dumping data for table `m2_catalog_product_website`
+--
+
+INSERT INTO `m2_catalog_product_website` (`product_id`, `website_id`) VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -2091,6 +2457,17 @@ CREATE TABLE `m2_catalog_url_rewrite_product_category` (
   `category_id` int(10) UNSIGNED NOT NULL COMMENT 'category_id',
   `product_id` int(10) UNSIGNED NOT NULL COMMENT 'product_id'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='url_rewrite_relation';
+
+--
+-- Dumping data for table `m2_catalog_url_rewrite_product_category`
+--
+
+INSERT INTO `m2_catalog_url_rewrite_product_category` (`url_rewrite_id`, `category_id`, `product_id`) VALUES
+(14, 4, 1),
+(16, 4, 2),
+(18, 4, 3),
+(20, 4, 4),
+(22, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -2237,9 +2614,9 @@ INSERT INTO `m2_core_config_data` (`config_id`, `scope`, `scope_id`, `path`, `va
 (8, 'default', 0, 'web/secure/use_in_frontend', '1', '2021-03-26 18:05:43'),
 (9, 'default', 0, 'web/secure/use_in_adminhtml', '1', '2021-03-26 18:05:43'),
 (10, 'default', 0, 'general/locale/timezone', 'America/Chicago', '2021-03-26 18:05:43'),
-(11, 'default', 0, 'currency/options/base', 'USD', '2021-03-26 18:05:44'),
-(12, 'default', 0, 'currency/options/default', 'USD', '2021-03-26 18:05:44'),
-(13, 'default', 0, 'currency/options/allow', 'USD', '2021-03-26 18:05:44'),
+(11, 'default', 0, 'currency/options/base', 'UAH', '2021-03-30 06:54:59'),
+(12, 'default', 0, 'currency/options/default', 'UAH', '2021-03-30 06:56:20'),
+(13, 'default', 0, 'currency/options/allow', 'UAH', '2021-03-30 06:56:20'),
 (14, 'default', 0, 'general/region/display_all', '1', '2021-03-26 18:05:45'),
 (15, 'default', 0, 'general/region/state_required', 'AU,BG,BR,CA,CH,CN,CO,EE,ES,HR,IN,IT,LT,LV,MX,PL,RO,US,UY', '2021-03-26 18:05:50'),
 (16, 'default', 0, 'catalog/category/root_id', '2', '2021-03-26 18:05:53'),
@@ -2263,7 +2640,14 @@ INSERT INTO `m2_core_config_data` (`config_id`, `scope`, `scope_id`, `path`, `va
 (34, 'default', 0, 'web/secure/base_media_url', 'https://vadymp.local/media/', '2021-03-26 18:05:58'),
 (35, 'default', 0, 'dev/js/move_script_to_bottom', '1', '2021-03-26 18:05:58'),
 (36, 'default', 0, 'dev/static/sign', '1', '2021-03-26 18:05:58'),
-(37, 'default', 0, 'dev/css/use_css_critical_path', '1', '2021-03-26 18:05:58');
+(37, 'default', 0, 'dev/css/use_css_critical_path', '1', '2021-03-26 18:05:58'),
+(38, 'default', 0, 'twofactorauth/general/force_providers', 'google', '2021-03-29 15:15:11'),
+(39, 'default', 0, 'admin/usage/enabled', '1', '2021-03-29 15:16:05'),
+(40, 'default', 0, 'currency/options/customsymbol', '{\"UAH\":\"\\u20b4\"}', '2021-03-30 06:57:05'),
+(41, 'default', 0, 'currency/fixerio/api_key', NULL, '2021-03-30 06:54:59'),
+(42, 'default', 0, 'currency/fixerio/timeout', '100', '2021-03-30 06:54:59'),
+(43, 'default', 0, 'currency/currencyconverterapi/api_key', NULL, '2021-03-30 06:54:59'),
+(44, 'default', 0, 'currency/currencyconverterapi/timeout', '100', '2021-03-30 06:54:59');
 
 -- --------------------------------------------------------
 
@@ -4874,6 +5258,7 @@ CREATE TABLE `m2_directory_currency_rate` (
 INSERT INTO `m2_directory_currency_rate` (`currency_from`, `currency_to`, `rate`) VALUES
 ('EUR', 'EUR', '1.000000000000'),
 ('EUR', 'USD', '1.415000000000'),
+('UAH', 'UAH', '1.000000000000'),
 ('USD', 'EUR', '0.706700000000'),
 ('USD', 'USD', '1.000000000000');
 
@@ -5826,6 +6211,17 @@ CREATE TABLE `m2_email_catalog` (
   `last_imported_at` timestamp NULL DEFAULT NULL COMMENT 'Last imported date'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Connector Catalog';
 
+--
+-- Dumping data for table `m2_email_catalog`
+--
+
+INSERT INTO `m2_email_catalog` (`id`, `product_id`, `processed`, `created_at`, `updated_at`, `last_imported_at`) VALUES
+(1, 1, 0, '2021-03-30 07:15:43', '2021-03-30 07:15:43', NULL),
+(2, 2, 0, '2021-03-30 07:21:01', '2021-03-30 07:21:01', NULL),
+(3, 3, 0, '2021-03-30 07:24:53', '2021-03-30 07:24:53', NULL),
+(4, 4, 0, '2021-03-30 07:28:46', '2021-03-30 07:34:44', NULL),
+(5, 5, 0, '2021-03-30 07:33:31', '2021-03-30 07:33:58', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -6126,17 +6522,17 @@ CREATE TABLE `m2_indexer_state` (
 --
 
 INSERT INTO `m2_indexer_state` (`state_id`, `indexer_id`, `status`, `updated`, `hash_config`) VALUES
-(1, 'design_config_grid', 'valid', '2021-03-29 10:02:28', '16201561936f870b8af9d9b318b045fe'),
-(2, 'customer_grid', 'valid', '2021-03-29 10:02:28', 'fde1ac8ad04b9955a16384d4f3fad919'),
-(3, 'catalog_category_product', 'valid', '2021-03-29 10:02:28', 'ec755bfdfaf18adf5e04b2c115d40123'),
-(4, 'catalog_product_category', 'valid', '2021-03-29 10:02:28', 'a714504088ecffadc773563b1b40af1a'),
-(5, 'catalogrule_rule', 'valid', '2021-03-29 10:02:29', '04eaaebbfb310d7b8fdc15d02ffd40c3'),
-(6, 'catalog_product_attribute', 'valid', '2021-03-29 10:02:29', '6b50e3a39836846867dc9cdb421e1a66'),
-(7, 'cataloginventory_stock', 'valid', '2021-03-29 10:02:29', '7012dc0f794184a72a338804ca47aa1f'),
-(8, 'inventory', 'valid', '2021-03-29 10:02:29', 'd2bb662301c5d7054108c9c265ff99b9'),
-(9, 'catalogrule_product', 'valid', '2021-03-29 10:02:29', '4a8f5ba504e7d0b765d6f80e7522d719'),
-(10, 'catalog_product_price', 'valid', '2021-03-29 10:02:30', '643249ec448555e87ecc0312da1c75d7'),
-(11, 'catalogsearch_fulltext', 'invalid', '2021-03-29 10:02:30', '238efca417edeb4be29e373736a95eb8');
+(1, 'design_config_grid', 'valid', '2021-03-30 07:46:52', '16201561936f870b8af9d9b318b045fe'),
+(2, 'customer_grid', 'valid', '2021-03-30 07:46:52', 'fde1ac8ad04b9955a16384d4f3fad919'),
+(3, 'catalog_category_product', 'valid', '2021-03-30 07:46:53', 'ec755bfdfaf18adf5e04b2c115d40123'),
+(4, 'catalog_product_category', 'valid', '2021-03-30 07:46:53', 'a714504088ecffadc773563b1b40af1a'),
+(5, 'catalogrule_rule', 'valid', '2021-03-30 07:46:53', '04eaaebbfb310d7b8fdc15d02ffd40c3'),
+(6, 'catalog_product_attribute', 'valid', '2021-03-30 07:46:53', '6b50e3a39836846867dc9cdb421e1a66'),
+(7, 'cataloginventory_stock', 'valid', '2021-03-30 07:46:53', '7012dc0f794184a72a338804ca47aa1f'),
+(8, 'inventory', 'valid', '2021-03-30 07:46:53', 'd2bb662301c5d7054108c9c265ff99b9'),
+(9, 'catalogrule_product', 'valid', '2021-03-30 07:46:53', '4a8f5ba504e7d0b765d6f80e7522d719'),
+(10, 'catalog_product_price', 'valid', '2021-03-30 07:46:54', '643249ec448555e87ecc0312da1c75d7'),
+(11, 'catalogsearch_fulltext', 'valid', '2021-03-30 07:46:54', '238efca417edeb4be29e373736a95eb8');
 
 -- --------------------------------------------------------
 
@@ -6184,6 +6580,17 @@ CREATE TABLE `m2_inventory_low_stock_notification_configuration` (
   `sku` varchar(64) NOT NULL,
   `notify_stock_qty` decimal(12,4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `m2_inventory_low_stock_notification_configuration`
+--
+
+INSERT INTO `m2_inventory_low_stock_notification_configuration` (`source_code`, `sku`, `notify_stock_qty`) VALUES
+('default', 'HyperX Alloy Origins USB HyperX Red (HX-KB6RDX-RU)', NULL),
+('default', 'Keyboard HyperX Alloy FPS Pro Cherry MX Red USB', NULL),
+('default', 'Logitech G213 Prodigy USB (920-008092)', NULL),
+('default', 'Logitech K580 Slim Multi-Device Wireless Graphite (920-009275)', NULL),
+('default', 'Logitech Touch K400 Plus Black RUS (920-007147)', NULL);
 
 -- --------------------------------------------------------
 
@@ -6306,6 +6713,17 @@ CREATE TABLE `m2_inventory_source_item` (
   `quantity` decimal(12,4) NOT NULL DEFAULT 0.0000,
   `status` smallint(5) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `m2_inventory_source_item`
+--
+
+INSERT INTO `m2_inventory_source_item` (`source_item_id`, `source_code`, `sku`, `quantity`, `status`) VALUES
+(1, 'default', 'Keyboard HyperX Alloy FPS Pro Cherry MX Red USB', '256.0000', 1),
+(3, 'default', 'HyperX Alloy Origins USB HyperX Red (HX-KB6RDX-RU)', '256.0000', 1),
+(5, 'default', 'Logitech G213 Prodigy USB (920-008092)', '256.0000', 1),
+(7, 'default', 'Logitech Touch K400 Plus Black RUS (920-007147)', '256.0000', 1),
+(9, 'default', 'Logitech K580 Slim Multi-Device Wireless Graphite (920-009275)', '256.0000', 1);
 
 -- --------------------------------------------------------
 
@@ -7182,7 +7600,7 @@ CREATE TABLE `m2_queue_poison_pill` (
 --
 
 INSERT INTO `m2_queue_poison_pill` (`version`) VALUES
-('version-605e2278875c6');
+('version-6062d71a478fd');
 
 -- --------------------------------------------------------
 
@@ -9581,7 +9999,7 @@ CREATE TABLE `m2_store_group` (
 
 INSERT INTO `m2_store_group` (`group_id`, `website_id`, `name`, `root_category_id`, `default_store_id`, `code`) VALUES
 (0, 0, 'Default', 0, 0, 'default'),
-(1, 1, 'Main Website Store', 2, 1, 'main_website_store');
+(1, 1, 'Main Website Store', 3, 1, 'main_website_store');
 
 -- --------------------------------------------------------
 
@@ -10007,6 +10425,13 @@ CREATE TABLE `m2_tfa_user_config` (
   `default_provider` varchar(255) DEFAULT NULL COMMENT 'Default provider'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tfa_user_config';
 
+--
+-- Dumping data for table `m2_tfa_user_config`
+--
+
+INSERT INTO `m2_tfa_user_config` (`config_id`, `user_id`, `encoded_providers`, `encoded_config`, `default_provider`) VALUES
+(1, 1, '[]', '0:3:hCbif1Rnh5RgT8kdjXokpEPi35xFSP/+pE8MYJ0sBy3C0Dqq8hKzNTCj7dyNXfpKA1P2rlXxxZZOapsyHypxzFUCo1DCzyjuJNCG7q0wFfn7disl8whVB7wq4rkAWdcE3fm66C/Ud/CeCCQ2Bg6cvRIXt4SMK+4M1rj8eb0oY2u5HUugSri1uwTRiSR61VXGh3B/0RLYTRy1bz27CV9XoS02N8HHvTv6sOpkiRc2IyYKUx4d8tk/hhYfB/rcuvJoe9wgNuKy5amJn/O01DYvJOSKsW6x0e/Jx1RIHKoo8+cmqgU34P0RAUvLE7MYEp8jwIuQZe2m7qVkFB9DDdS4AIhIKp64JFAqgIsg7CTY7EWpIUhFGHddY+0/t1zU7L+Rj18aVlwZZvqPedIEMRONfBK9eneWdb1wvsCFrwaWMBgi4JSBXbRTku3TyYTpSW6TPSqlji779q1fy7zSs8ZvM4Ko5PqRTpmNSLxspZ/vU+1uarmYU48S26bDjfCX6Dhhv6NJ', 'google');
+
 -- --------------------------------------------------------
 
 --
@@ -10083,6 +10508,18 @@ CREATE TABLE `m2_ui_bookmark` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Bookmark updated at'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Bookmark';
 
+--
+-- Dumping data for table `m2_ui_bookmark`
+--
+
+INSERT INTO `m2_ui_bookmark` (`bookmark_id`, `user_id`, `namespace`, `identifier`, `current`, `title`, `config`, `created_at`, `updated_at`) VALUES
+(1, 1, 'cms_block_listing', 'default', 1, 'Default View', '{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"search\":{\"value\":\"\"},\"columns\":{\"block_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"pageSize\":20,\"current\":1}},\"value\":\"Default View\"}}}', '2021-03-30 06:40:12', '2021-03-30 06:40:12'),
+(2, 1, 'cms_block_listing', 'current', 0, NULL, '{\"current\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"search\":{\"value\":\"\"},\"columns\":{\"block_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"pageSize\":20,\"current\":1,\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"block_id\":1,\"title\":2,\"identifier\":3,\"store_id\":4,\"is_active\":5,\"creation_time\":6,\"update_time\":7,\"actions\":8}}}', '2021-03-30 06:40:13', '2021-03-30 06:40:13'),
+(3, 1, 'product_listing', 'default', 1, 'Default View', '{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"paging\":{\"pageSize\":20,\"current\":1,\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"filters\":{\"applied\":{\"placeholder\":true}},\"search\":{\"value\":\"\"},\"columns\":{\"entity_id\":{\"visible\":true,\"sorting\":\"asc\"},\"name\":{\"visible\":true,\"sorting\":false},\"sku\":{\"visible\":true,\"sorting\":false},\"price\":{\"visible\":true,\"sorting\":false},\"websites\":{\"visible\":true,\"sorting\":false},\"qty\":{\"visible\":true,\"sorting\":false},\"short_description\":{\"visible\":false,\"sorting\":false},\"special_price\":{\"visible\":false,\"sorting\":false},\"cost\":{\"visible\":false,\"sorting\":false},\"weight\":{\"visible\":false,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keyword\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"url_key\":{\"visible\":false,\"sorting\":false},\"msrp\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"type_id\":{\"visible\":true,\"sorting\":false},\"attribute_set_id\":{\"visible\":true,\"sorting\":false},\"visibility\":{\"visible\":true,\"sorting\":false},\"status\":{\"visible\":true,\"sorting\":false},\"manufacturer\":{\"visible\":false,\"sorting\":false},\"color\":{\"visible\":false,\"sorting\":false},\"custom_design\":{\"visible\":false,\"sorting\":false},\"page_layout\":{\"visible\":false,\"sorting\":false},\"country_of_manufacture\":{\"visible\":false,\"sorting\":false},\"custom_layout\":{\"visible\":false,\"sorting\":false},\"gift_message_available\":{\"visible\":false,\"sorting\":false},\"tax_class_id\":{\"visible\":false,\"sorting\":false},\"special_from_date\":{\"visible\":false,\"sorting\":false},\"special_to_date\":{\"visible\":false,\"sorting\":false},\"news_from_date\":{\"visible\":false,\"sorting\":false},\"news_to_date\":{\"visible\":false,\"sorting\":false},\"custom_design_from\":{\"visible\":false,\"sorting\":false},\"custom_design_to\":{\"visible\":false,\"sorting\":false},\"salable_quantity\":{\"visible\":true,\"sorting\":false},\"thumbnail\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"positions\":{\"ids\":0,\"entity_id\":1,\"thumbnail\":2,\"name\":3,\"type_id\":4,\"attribute_set_id\":5,\"sku\":6,\"price\":7,\"qty\":8,\"salable_quantity\":9,\"visibility\":10,\"status\":11,\"websites\":12,\"short_description\":13,\"special_price\":14,\"special_from_date\":15,\"special_to_date\":16,\"cost\":17,\"weight\":18,\"manufacturer\":19,\"meta_title\":20,\"meta_keyword\":21,\"meta_description\":22,\"color\":23,\"news_from_date\":24,\"news_to_date\":25,\"custom_design\":26,\"custom_design_from\":27,\"custom_design_to\":28,\"page_layout\":29,\"country_of_manufacture\":30,\"custom_layout\":31,\"url_key\":32,\"msrp\":33,\"gift_message_available\":34,\"tax_class_id\":35,\"actions\":36}},\"value\":\"Default View\"}}}', '2021-03-30 06:42:58', '2021-03-30 06:42:58'),
+(4, 1, 'product_listing', 'current', 0, NULL, '{\"current\":{\"paging\":{\"pageSize\":20,\"current\":1,\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"filters\":{\"applied\":{\"placeholder\":true}},\"search\":{\"value\":\"\"},\"columns\":{\"entity_id\":{\"visible\":true,\"sorting\":\"asc\"},\"name\":{\"visible\":true,\"sorting\":false},\"sku\":{\"visible\":true,\"sorting\":false},\"price\":{\"visible\":true,\"sorting\":false},\"websites\":{\"visible\":true,\"sorting\":false},\"qty\":{\"visible\":true,\"sorting\":false},\"short_description\":{\"visible\":false,\"sorting\":false},\"special_price\":{\"visible\":false,\"sorting\":false},\"cost\":{\"visible\":false,\"sorting\":false},\"weight\":{\"visible\":false,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keyword\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"url_key\":{\"visible\":false,\"sorting\":false},\"msrp\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"type_id\":{\"visible\":true,\"sorting\":false},\"attribute_set_id\":{\"visible\":true,\"sorting\":false},\"visibility\":{\"visible\":true,\"sorting\":false},\"status\":{\"visible\":true,\"sorting\":false},\"manufacturer\":{\"visible\":false,\"sorting\":false},\"color\":{\"visible\":false,\"sorting\":false},\"custom_design\":{\"visible\":false,\"sorting\":false},\"page_layout\":{\"visible\":false,\"sorting\":false},\"country_of_manufacture\":{\"visible\":false,\"sorting\":false},\"custom_layout\":{\"visible\":false,\"sorting\":false},\"gift_message_available\":{\"visible\":false,\"sorting\":false},\"tax_class_id\":{\"visible\":false,\"sorting\":false},\"special_from_date\":{\"visible\":false,\"sorting\":false},\"special_to_date\":{\"visible\":false,\"sorting\":false},\"news_from_date\":{\"visible\":false,\"sorting\":false},\"news_to_date\":{\"visible\":false,\"sorting\":false},\"custom_design_from\":{\"visible\":false,\"sorting\":false},\"custom_design_to\":{\"visible\":false,\"sorting\":false},\"salable_quantity\":{\"visible\":true,\"sorting\":false},\"thumbnail\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"positions\":{\"ids\":0,\"entity_id\":1,\"thumbnail\":2,\"name\":3,\"type_id\":4,\"attribute_set_id\":5,\"sku\":6,\"price\":7,\"qty\":8,\"salable_quantity\":9,\"visibility\":10,\"status\":11,\"websites\":12,\"short_description\":13,\"special_price\":14,\"special_from_date\":15,\"special_to_date\":16,\"cost\":17,\"weight\":18,\"manufacturer\":19,\"meta_title\":20,\"meta_keyword\":21,\"meta_description\":22,\"color\":23,\"news_from_date\":24,\"news_to_date\":25,\"custom_design\":26,\"custom_design_from\":27,\"custom_design_to\":28,\"page_layout\":29,\"country_of_manufacture\":30,\"custom_layout\":31,\"url_key\":32,\"msrp\":33,\"gift_message_available\":34,\"tax_class_id\":35,\"actions\":36}}}', '2021-03-30 06:42:59', '2021-03-30 06:42:59'),
+(5, 1, 'adobe_stock_images_listing', 'default', 1, 'Default View', '{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"search\":{\"value\":\"\"},\"paging\":{\"pageSize\":20,\"current\":1},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"relevance\":{\"visible\":false,\"sorting\":false},\"creation\":{\"visible\":false,\"sorting\":false},\"popularity\":{\"visible\":false,\"sorting\":false},\"nb_downloads\":{\"visible\":false,\"sorting\":false},\"undiscovered\":{\"visible\":false,\"sorting\":false}}},\"value\":\"Default View\"}}}', '2021-03-30 07:02:00', '2021-03-30 07:02:00'),
+(6, 1, 'adobe_stock_images_listing', 'current', 0, NULL, '{\"current\":{\"search\":{\"value\":\"\"},\"paging\":{\"pageSize\":32,\"current\":1,\"value\":32},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"relevance\":{\"visible\":false,\"sorting\":false},\"creation\":{\"visible\":false,\"sorting\":false},\"popularity\":{\"visible\":false,\"sorting\":false},\"nb_downloads\":{\"visible\":false,\"sorting\":false},\"undiscovered\":{\"visible\":false,\"sorting\":false},\"thumbnail_url\":{\"visible\":true,\"sorting\":false},\"overlay\":{\"visible\":true,\"sorting\":false},\"preview\":{\"visible\":true,\"sorting\":false,\"lastOpenedImage\":false}},\"displayMode\":\"grid\",\"positions\":{\"overlay\":0,\"thumbnail_url\":1,\"preview\":2,\"relevance\":3,\"creation\":4,\"popularity\":5,\"nb_downloads\":6,\"undiscovered\":7}}}', '2021-03-30 07:02:02', '2021-03-30 07:02:02');
+
 -- --------------------------------------------------------
 
 --
@@ -10107,10 +10544,17 @@ CREATE TABLE `m2_url_rewrite` (
 --
 
 INSERT INTO `m2_url_rewrite` (`url_rewrite_id`, `entity_type`, `entity_id`, `request_path`, `target_path`, `redirect_type`, `store_id`, `description`, `is_autogenerated`, `metadata`) VALUES
-(1, 'cms-page', 1, 'no-route', 'cms/page/view/page_id/1', 0, 1, NULL, 1, NULL),
-(2, 'cms-page', 2, 'home', 'cms/page/view/page_id/2', 0, 1, NULL, 1, NULL),
-(3, 'cms-page', 3, 'enable-cookies', 'cms/page/view/page_id/3', 0, 1, NULL, 1, NULL),
-(4, 'cms-page', 4, 'privacy-policy-cookie-restriction-mode', 'cms/page/view/page_id/4', 0, 1, NULL, 1, NULL);
+(12, 'category', 4, 'keyboards.html', 'catalog/category/view/id/4', 0, 1, NULL, 1, NULL),
+(13, 'product', 1, 'keyboard-hyperx-alloy-fps-pro-cherry-mx-red-usb.html', 'catalog/product/view/id/1', 0, 1, NULL, 1, NULL),
+(14, 'product', 1, 'keyboards/keyboard-hyperx-alloy-fps-pro-cherry-mx-red-usb.html', 'catalog/product/view/id/1/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
+(15, 'product', 2, 'hyperx-alloy-origins-usb-hyperx-red-hx-kb6rdx-ru.html', 'catalog/product/view/id/2', 0, 1, NULL, 1, NULL),
+(16, 'product', 2, 'keyboards/hyperx-alloy-origins-usb-hyperx-red-hx-kb6rdx-ru.html', 'catalog/product/view/id/2/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
+(17, 'product', 3, 'logitech-g213-prodigy-usb-920-008092.html', 'catalog/product/view/id/3', 0, 1, NULL, 1, NULL),
+(18, 'product', 3, 'keyboards/logitech-g213-prodigy-usb-920-008092.html', 'catalog/product/view/id/3/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
+(19, 'product', 4, 'logitech-touch-k400-plus-black-rus-920-007147.html', 'catalog/product/view/id/4', 0, 1, NULL, 1, NULL),
+(20, 'product', 4, 'keyboards/logitech-touch-k400-plus-black-rus-920-007147.html', 'catalog/product/view/id/4/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
+(21, 'product', 5, 'logitech-k580-slim-multi-device-wireless-graphite-920-009275.html', 'catalog/product/view/id/5', 0, 1, NULL, 1, NULL),
+(22, 'product', 5, 'keyboards/logitech-k580-slim-multi-device-wireless-graphite-920-009275.html', 'catalog/product/view/id/5/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}');
 
 -- --------------------------------------------------------
 
@@ -13806,7 +14250,7 @@ ALTER TABLE `m2_adminnotification_inbox`
 -- AUTO_INCREMENT for table `m2_admin_analytics_usage_version_log`
 --
 ALTER TABLE `m2_admin_analytics_usage_version_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Log ID';
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Log ID', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `m2_admin_passwords`
@@ -13824,7 +14268,7 @@ ALTER TABLE `m2_admin_user`
 -- AUTO_INCREMENT for table `m2_admin_user_session`
 --
 ALTER TABLE `m2_admin_user_session`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Entity ID', AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Entity ID', AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `m2_adobe_stock_asset`
@@ -13920,7 +14364,7 @@ ALTER TABLE `m2_cataloginventory_stock`
 -- AUTO_INCREMENT for table `m2_cataloginventory_stock_item`
 --
 ALTER TABLE `m2_cataloginventory_stock_item`
-  MODIFY `item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Item ID';
+  MODIFY `item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Item ID', AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `m2_catalogrule`
@@ -13962,7 +14406,7 @@ ALTER TABLE `m2_catalogsearch_recommendations`
 -- AUTO_INCREMENT for table `m2_catalog_category_entity`
 --
 ALTER TABLE `m2_catalog_category_entity`
-  MODIFY `entity_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Entity ID', AUTO_INCREMENT=3;
+  MODIFY `entity_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Entity ID', AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_category_entity_datetime`
@@ -13980,25 +14424,25 @@ ALTER TABLE `m2_catalog_category_entity_decimal`
 -- AUTO_INCREMENT for table `m2_catalog_category_entity_int`
 --
 ALTER TABLE `m2_catalog_category_entity_int`
-  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=4;
+  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_category_entity_text`
 --
 ALTER TABLE `m2_catalog_category_entity_text`
-  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID';
+  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_category_entity_varchar`
 --
 ALTER TABLE `m2_catalog_category_entity_varchar`
-  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=4;
+  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_category_product`
 --
 ALTER TABLE `m2_catalog_category_product`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Entity ID';
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Entity ID', AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_compare_item`
@@ -14034,7 +14478,7 @@ ALTER TABLE `m2_catalog_product_bundle_selection`
 -- AUTO_INCREMENT for table `m2_catalog_product_entity`
 --
 ALTER TABLE `m2_catalog_product_entity`
-  MODIFY `entity_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Entity ID';
+  MODIFY `entity_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Entity ID', AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_datetime`
@@ -14046,7 +14490,7 @@ ALTER TABLE `m2_catalog_product_entity_datetime`
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_decimal`
 --
 ALTER TABLE `m2_catalog_product_entity_decimal`
-  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID';
+  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_gallery`
@@ -14058,25 +14502,25 @@ ALTER TABLE `m2_catalog_product_entity_gallery`
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_int`
 --
 ALTER TABLE `m2_catalog_product_entity_int`
-  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID';
+  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_media_gallery`
 --
 ALTER TABLE `m2_catalog_product_entity_media_gallery`
-  MODIFY `value_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Value ID';
+  MODIFY `value_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_media_gallery_value`
 --
 ALTER TABLE `m2_catalog_product_entity_media_gallery_value`
-  MODIFY `record_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Record ID';
+  MODIFY `record_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Record ID', AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_text`
 --
 ALTER TABLE `m2_catalog_product_entity_text`
-  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID';
+  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_tier_price`
@@ -14088,7 +14532,7 @@ ALTER TABLE `m2_catalog_product_entity_tier_price`
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_varchar`
 --
 ALTER TABLE `m2_catalog_product_entity_varchar`
-  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID';
+  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_product_frontend_action`
@@ -14208,7 +14652,7 @@ ALTER TABLE `m2_cms_page`
 -- AUTO_INCREMENT for table `m2_core_config_data`
 --
 ALTER TABLE `m2_core_config_data`
-  MODIFY `config_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Config ID', AUTO_INCREMENT=38;
+  MODIFY `config_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Config ID', AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `m2_cron_schedule`
@@ -14502,7 +14946,7 @@ ALTER TABLE `m2_email_campaign`
 -- AUTO_INCREMENT for table `m2_email_catalog`
 --
 ALTER TABLE `m2_email_catalog`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key';
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `m2_email_contact`
@@ -14646,7 +15090,7 @@ ALTER TABLE `m2_inventory_source_carrier_link`
 -- AUTO_INCREMENT for table `m2_inventory_source_item`
 --
 ALTER TABLE `m2_inventory_source_item`
-  MODIFY `source_item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `source_item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `m2_inventory_source_stock_link`
@@ -15420,7 +15864,7 @@ ALTER TABLE `m2_tfa_country_codes`
 -- AUTO_INCREMENT for table `m2_tfa_user_config`
 --
 ALTER TABLE `m2_tfa_user_config`
-  MODIFY `config_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'TFA admin user ID';
+  MODIFY `config_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'TFA admin user ID', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `m2_theme`
@@ -15444,13 +15888,13 @@ ALTER TABLE `m2_translation`
 -- AUTO_INCREMENT for table `m2_ui_bookmark`
 --
 ALTER TABLE `m2_ui_bookmark`
-  MODIFY `bookmark_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Bookmark identifier';
+  MODIFY `bookmark_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Bookmark identifier', AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `m2_url_rewrite`
 --
 ALTER TABLE `m2_url_rewrite`
-  MODIFY `url_rewrite_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Rewrite ID', AUTO_INCREMENT=5;
+  MODIFY `url_rewrite_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Rewrite ID', AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `m2_variable`
