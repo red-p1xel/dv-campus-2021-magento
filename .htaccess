@@ -1,4 +1,10 @@
 RewriteEngine on
+SetEnvIf Host .*vadymp.local.* MAGE_RUN_CODE=base
+SetEnvIf Host .*vadymp.local.* MAGE_RUN_TYPE=website
+
+SetEnvIf Host .*vadymp-keybay.local.* MAGE_RUN_CODE=KBDB
+SetEnvIf Host .*vadymp-keybay.local.* MAGE_RUN_TYPE=website
+
 RewriteCond %{REQUEST_URI} !^/pub/
 RewriteCond %{REQUEST_URI} !^/setup/
 RewriteCond %{REQUEST_URI} !^/update/
