@@ -47,6 +47,7 @@ Go to **Stores** > **Configuration** > **Web** >> **Base URLs (Secure)** and set
 These settings most be enabled for all your sites in the future.
 
 ### Manual add new website
+
 1. Edit **Base URLs** and **Base URLs (Secure)** in **Stores** > **Configuration** > **Web** of newly add website.
 2. Add website hostnames to **/etc/hosts**
 3. Edit **ServerAlias** section in your **<YOUR_PROJECT_ROOT_DIR>/docker/virtual-host.conf**
