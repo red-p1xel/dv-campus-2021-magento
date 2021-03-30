@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb104
--- Generation Time: Mar 30, 2021 at 07:52 AM
+-- Generation Time: Mar 30, 2021 at 08:37 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -168,7 +168,7 @@ INSERT INTO `m2_admin_user_session` (`id`, `session_id`, `user_id`, `status`, `c
 (2, 'j7s1q59c3753r0pnhrmdb14cub', 1, 1, '2021-03-29 14:38:32', '2021-03-29 14:38:32', '172.17.0.10'),
 (3, 'osavo0470391hq8b14409s1mtl', 1, 0, '2021-03-29 15:06:36', '2021-03-29 15:14:23', '172.17.0.10'),
 (4, '222fq5kq4qngijh4333nieb3le', 1, 1, '2021-03-29 15:14:47', '2021-03-29 15:15:53', '172.17.0.10'),
-(5, 'qc5f40jb3rqbfshf19hht41pb7', 1, 1, '2021-03-30 06:36:24', '2021-03-30 07:47:03', '172.17.0.10');
+(5, 'qc5f40jb3rqbfshf19hht41pb7', 1, 1, '2021-03-30 06:36:24', '2021-03-30 08:36:49', '172.17.0.10');
 
 -- --------------------------------------------------------
 
@@ -973,16 +973,16 @@ CREATE TABLE `m2_catalog_category_product_index_store1_replica` (
 --
 
 INSERT INTO `m2_catalog_category_product_index_store1_replica` (`category_id`, `product_id`, `position`, `is_parent`, `store_id`, `visibility`) VALUES
-(2, 1, 0, 1, 1, 4),
-(2, 2, 0, 1, 1, 4),
-(2, 3, 0, 1, 1, 4),
-(2, 4, 0, 1, 1, 4),
-(2, 5, 0, 1, 1, 4),
 (3, 1, 0, 0, 1, 4),
 (3, 2, 0, 0, 1, 4),
 (3, 3, 0, 0, 1, 4),
 (3, 4, 0, 0, 1, 4),
-(3, 5, 0, 0, 1, 4);
+(3, 5, 0, 0, 1, 4),
+(4, 1, 0, 1, 1, 4),
+(4, 2, 0, 1, 1, 4),
+(4, 3, 0, 1, 1, 4),
+(4, 4, 0, 1, 1, 4),
+(4, 5, 0, 1, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -1269,10 +1269,10 @@ CREATE TABLE `m2_catalog_product_entity` (
 
 INSERT INTO `m2_catalog_product_entity` (`entity_id`, `attribute_set_id`, `type_id`, `sku`, `has_options`, `required_options`, `created_at`, `updated_at`) VALUES
 (1, 4, 'simple', 'Keyboard HyperX Alloy FPS Pro Cherry MX Red USB', 0, 0, '2021-03-30 07:15:42', '2021-03-30 07:15:42'),
-(2, 4, 'simple', 'HyperX Alloy Origins USB HyperX Red (HX-KB6RDX-RU)', 0, 0, '2021-03-30 07:21:00', '2021-03-30 07:21:00'),
-(3, 4, 'simple', 'Logitech G213 Prodigy USB (920-008092)', 0, 0, '2021-03-30 07:24:53', '2021-03-30 07:24:53'),
-(4, 4, 'simple', 'Logitech Touch K400 Plus Black RUS (920-007147)', 0, 0, '2021-03-30 07:28:46', '2021-03-30 07:34:43'),
-(5, 4, 'simple', 'Logitech K580 Slim Multi-Device Wireless Graphite (920-009275)', 0, 0, '2021-03-30 07:33:30', '2021-03-30 07:33:58');
+(2, 4, 'simple', 'HX-KB6RDX-RU', 0, 0, '2021-03-30 07:21:00', '2021-03-30 08:35:39'),
+(3, 4, 'simple', '920-008092', 0, 0, '2021-03-30 07:24:53', '2021-03-30 08:36:09'),
+(4, 4, 'simple', '920-007147', 0, 0, '2021-03-30 07:28:46', '2021-03-30 08:36:33'),
+(5, 4, 'simple', '920-009275', 0, 0, '2021-03-30 07:33:30', '2021-03-30 08:37:07');
 
 -- --------------------------------------------------------
 
@@ -1410,10 +1410,10 @@ CREATE TABLE `m2_catalog_product_entity_media_gallery_value` (
 
 INSERT INTO `m2_catalog_product_entity_media_gallery_value` (`value_id`, `store_id`, `entity_id`, `label`, `position`, `disabled`, `record_id`) VALUES
 (1, 0, 1, NULL, 1, 0, 1),
-(2, 0, 2, NULL, 1, 0, 2),
-(3, 0, 3, NULL, 1, 0, 3),
-(5, 0, 5, NULL, 1, 0, 6),
-(4, 0, 4, NULL, 1, 0, 7);
+(2, 0, 2, NULL, 1, 0, 8),
+(3, 0, 3, NULL, 1, 0, 9),
+(4, 0, 4, NULL, 1, 0, 10),
+(5, 0, 5, NULL, 1, 0, 11);
 
 -- --------------------------------------------------------
 
@@ -1616,10 +1616,15 @@ CREATE TABLE `m2_catalog_product_index_eav` (
 
 INSERT INTO `m2_catalog_product_index_eav` (`entity_id`, `attribute_id`, `store_id`, `value`, `source_id`) VALUES
 (1, 99, 1, 4, 1),
+(1, 99, 2, 4, 1),
 (2, 99, 1, 4, 2),
+(2, 99, 2, 4, 2),
 (3, 99, 1, 4, 3),
+(3, 99, 2, 4, 3),
 (4, 99, 1, 4, 4),
-(5, 99, 1, 4, 5);
+(4, 99, 2, 4, 4),
+(5, 99, 1, 4, 5),
+(5, 99, 2, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -2189,7 +2194,8 @@ CREATE TABLE `m2_catalog_product_index_website` (
 --
 
 INSERT INTO `m2_catalog_product_index_website` (`website_id`, `default_store_id`, `website_date`, `rate`) VALUES
-(1, 1, '2021-03-30', 1);
+(1, 1, '2021-03-30', 1),
+(2, 2, '2021-03-30', 1);
 
 -- --------------------------------------------------------
 
@@ -3204,7 +3210,9 @@ CREATE TABLE `m2_design_config_grid_flat` (
 INSERT INTO `m2_design_config_grid_flat` (`entity_id`, `store_website_id`, `store_group_id`, `store_id`, `theme_theme_id`) VALUES
 (0, NULL, NULL, NULL, ''),
 (1, 1, NULL, NULL, ''),
-(2, 1, 1, 1, '');
+(2, 1, 1, 1, ''),
+(3, 2, NULL, NULL, ''),
+(4, 2, 2, 2, '');
 
 -- --------------------------------------------------------
 
@@ -6217,10 +6225,10 @@ CREATE TABLE `m2_email_catalog` (
 
 INSERT INTO `m2_email_catalog` (`id`, `product_id`, `processed`, `created_at`, `updated_at`, `last_imported_at`) VALUES
 (1, 1, 0, '2021-03-30 07:15:43', '2021-03-30 07:15:43', NULL),
-(2, 2, 0, '2021-03-30 07:21:01', '2021-03-30 07:21:01', NULL),
-(3, 3, 0, '2021-03-30 07:24:53', '2021-03-30 07:24:53', NULL),
-(4, 4, 0, '2021-03-30 07:28:46', '2021-03-30 07:34:44', NULL),
-(5, 5, 0, '2021-03-30 07:33:31', '2021-03-30 07:33:58', NULL);
+(2, 2, 0, '2021-03-30 07:21:01', '2021-03-30 08:35:39', NULL),
+(3, 3, 0, '2021-03-30 07:24:53', '2021-03-30 08:36:10', NULL),
+(4, 4, 0, '2021-03-30 07:28:46', '2021-03-30 08:36:34', NULL),
+(5, 5, 0, '2021-03-30 07:33:31', '2021-03-30 08:37:08', NULL);
 
 -- --------------------------------------------------------
 
@@ -6444,7 +6452,8 @@ CREATE TABLE `m2_flag` (
 --
 
 INSERT INTO `m2_flag` (`flag_id`, `flag_code`, `state`, `flag_data`, `last_update`) VALUES
-(1, 'analytics_link_attempts_reverse_counter', 0, '24', '2021-03-26 18:05:55');
+(1, 'analytics_link_attempts_reverse_counter', 0, '24', '2021-03-26 18:05:55'),
+(2, 'catalog_website_attribute_is_sync_required', 0, '2', '2021-03-30 08:01:37');
 
 -- --------------------------------------------------------
 
@@ -6522,17 +6531,17 @@ CREATE TABLE `m2_indexer_state` (
 --
 
 INSERT INTO `m2_indexer_state` (`state_id`, `indexer_id`, `status`, `updated`, `hash_config`) VALUES
-(1, 'design_config_grid', 'valid', '2021-03-30 07:46:52', '16201561936f870b8af9d9b318b045fe'),
-(2, 'customer_grid', 'valid', '2021-03-30 07:46:52', 'fde1ac8ad04b9955a16384d4f3fad919'),
-(3, 'catalog_category_product', 'valid', '2021-03-30 07:46:53', 'ec755bfdfaf18adf5e04b2c115d40123'),
-(4, 'catalog_product_category', 'valid', '2021-03-30 07:46:53', 'a714504088ecffadc773563b1b40af1a'),
-(5, 'catalogrule_rule', 'valid', '2021-03-30 07:46:53', '04eaaebbfb310d7b8fdc15d02ffd40c3'),
-(6, 'catalog_product_attribute', 'valid', '2021-03-30 07:46:53', '6b50e3a39836846867dc9cdb421e1a66'),
-(7, 'cataloginventory_stock', 'valid', '2021-03-30 07:46:53', '7012dc0f794184a72a338804ca47aa1f'),
-(8, 'inventory', 'valid', '2021-03-30 07:46:53', 'd2bb662301c5d7054108c9c265ff99b9'),
-(9, 'catalogrule_product', 'valid', '2021-03-30 07:46:53', '4a8f5ba504e7d0b765d6f80e7522d719'),
-(10, 'catalog_product_price', 'valid', '2021-03-30 07:46:54', '643249ec448555e87ecc0312da1c75d7'),
-(11, 'catalogsearch_fulltext', 'valid', '2021-03-30 07:46:54', '238efca417edeb4be29e373736a95eb8');
+(1, 'design_config_grid', 'valid', '2021-03-30 08:02:00', '16201561936f870b8af9d9b318b045fe'),
+(2, 'customer_grid', 'valid', '2021-03-30 08:02:00', 'fde1ac8ad04b9955a16384d4f3fad919'),
+(3, 'catalog_category_product', 'valid', '2021-03-30 08:02:01', 'ec755bfdfaf18adf5e04b2c115d40123'),
+(4, 'catalog_product_category', 'valid', '2021-03-30 08:02:01', 'a714504088ecffadc773563b1b40af1a'),
+(5, 'catalogrule_rule', 'valid', '2021-03-30 08:02:01', '04eaaebbfb310d7b8fdc15d02ffd40c3'),
+(6, 'catalog_product_attribute', 'valid', '2021-03-30 08:02:01', '6b50e3a39836846867dc9cdb421e1a66'),
+(7, 'cataloginventory_stock', 'valid', '2021-03-30 08:02:01', '7012dc0f794184a72a338804ca47aa1f'),
+(8, 'inventory', 'valid', '2021-03-30 08:02:01', 'd2bb662301c5d7054108c9c265ff99b9'),
+(9, 'catalogrule_product', 'valid', '2021-03-30 08:02:01', '4a8f5ba504e7d0b765d6f80e7522d719'),
+(10, 'catalog_product_price', 'valid', '2021-03-30 08:02:02', '643249ec448555e87ecc0312da1c75d7'),
+(11, 'catalogsearch_fulltext', 'valid', '2021-03-30 08:02:03', '238efca417edeb4be29e373736a95eb8');
 
 -- --------------------------------------------------------
 
@@ -6586,6 +6595,10 @@ CREATE TABLE `m2_inventory_low_stock_notification_configuration` (
 --
 
 INSERT INTO `m2_inventory_low_stock_notification_configuration` (`source_code`, `sku`, `notify_stock_qty`) VALUES
+('default', '920-007147', NULL),
+('default', '920-008092', NULL),
+('default', '920-009275', NULL),
+('default', 'HX-KB6RDX-RU', NULL),
 ('default', 'HyperX Alloy Origins USB HyperX Red (HX-KB6RDX-RU)', NULL),
 ('default', 'Keyboard HyperX Alloy FPS Pro Cherry MX Red USB', NULL),
 ('default', 'Logitech G213 Prodigy USB (920-008092)', NULL),
@@ -6723,7 +6736,11 @@ INSERT INTO `m2_inventory_source_item` (`source_item_id`, `source_code`, `sku`, 
 (3, 'default', 'HyperX Alloy Origins USB HyperX Red (HX-KB6RDX-RU)', '256.0000', 1),
 (5, 'default', 'Logitech G213 Prodigy USB (920-008092)', '256.0000', 1),
 (7, 'default', 'Logitech Touch K400 Plus Black RUS (920-007147)', '256.0000', 1),
-(9, 'default', 'Logitech K580 Slim Multi-Device Wireless Graphite (920-009275)', '256.0000', 1);
+(9, 'default', 'Logitech K580 Slim Multi-Device Wireless Graphite (920-009275)', '256.0000', 1),
+(15, 'default', 'HX-KB6RDX-RU', '256.0000', 1),
+(17, 'default', '920-008092', '256.0000', 1),
+(19, 'default', '920-007147', '256.0000', 1),
+(21, 'default', '920-009275', '256.0000', 1);
 
 -- --------------------------------------------------------
 
@@ -6795,7 +6812,8 @@ CREATE TABLE `m2_inventory_stock_sales_channel` (
 --
 
 INSERT INTO `m2_inventory_stock_sales_channel` (`type`, `code`, `stock_id`) VALUES
-('website', 'base', 1);
+('website', 'base', 1),
+('website', 'KBDB', 1);
 
 -- --------------------------------------------------------
 
@@ -7600,7 +7618,7 @@ CREATE TABLE `m2_queue_poison_pill` (
 --
 
 INSERT INTO `m2_queue_poison_pill` (`version`) VALUES
-('version-6062d71a478fd');
+('version-6062db113ba59');
 
 -- --------------------------------------------------------
 
@@ -9569,7 +9587,11 @@ INSERT INTO `m2_sales_sequence_meta` (`meta_id`, `entity_type`, `store_id`, `seq
 (5, 'order', 1, 'm2_sequence_order_1'),
 (6, 'invoice', 1, 'm2_sequence_invoice_1'),
 (7, 'creditmemo', 1, 'm2_sequence_creditmemo_1'),
-(8, 'shipment', 1, 'm2_sequence_shipment_1');
+(8, 'shipment', 1, 'm2_sequence_shipment_1'),
+(9, 'order', 2, 'm2_sequence_order_2'),
+(10, 'invoice', 2, 'm2_sequence_invoice_2'),
+(11, 'creditmemo', 2, 'm2_sequence_creditmemo_2'),
+(12, 'shipment', 2, 'm2_sequence_shipment_2');
 
 -- --------------------------------------------------------
 
@@ -9601,7 +9623,11 @@ INSERT INTO `m2_sales_sequence_profile` (`profile_id`, `meta_id`, `prefix`, `suf
 (5, 5, NULL, NULL, 1, 1, 4294967295, 4294966295, 1),
 (6, 6, NULL, NULL, 1, 1, 4294967295, 4294966295, 1),
 (7, 7, NULL, NULL, 1, 1, 4294967295, 4294966295, 1),
-(8, 8, NULL, NULL, 1, 1, 4294967295, 4294966295, 1);
+(8, 8, NULL, NULL, 1, 1, 4294967295, 4294966295, 1),
+(9, 9, '2', NULL, 1, 1, 4294967295, 4294966295, 1),
+(10, 10, '2', NULL, 1, 1, 4294967295, 4294966295, 1),
+(11, 11, '2', NULL, 1, 1, 4294967295, 4294966295, 1),
+(12, 12, '2', NULL, 1, 1, 4294967295, 4294966295, 1);
 
 -- --------------------------------------------------------
 
@@ -9976,7 +10002,8 @@ CREATE TABLE `m2_store` (
 
 INSERT INTO `m2_store` (`store_id`, `code`, `website_id`, `group_id`, `name`, `sort_order`, `is_active`) VALUES
 (0, 'admin', 0, 0, 'Admin', 0, 1),
-(1, 'default', 1, 1, 'Default Store View', 0, 1);
+(1, 'default', 1, 1, 'Default Store View', 0, 1),
+(2, 'KBDBSV', 2, 2, 'Keyboard Bay Store View', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -9999,7 +10026,8 @@ CREATE TABLE `m2_store_group` (
 
 INSERT INTO `m2_store_group` (`group_id`, `website_id`, `name`, `root_category_id`, `default_store_id`, `code`) VALUES
 (0, 0, 'Default', 0, 0, 'default'),
-(1, 1, 'Main Website Store', 3, 1, 'main_website_store');
+(1, 1, 'Main Website Store', 3, 1, 'main_website_store'),
+(2, 2, 'Keyboard Bay Store', 3, 2, 'KBDBS');
 
 -- --------------------------------------------------------
 
@@ -10022,7 +10050,8 @@ CREATE TABLE `m2_store_website` (
 
 INSERT INTO `m2_store_website` (`website_id`, `code`, `name`, `sort_order`, `default_group_id`, `is_default`) VALUES
 (0, 'admin', 'Admin', 0, 0, 0),
-(1, 'base', 'Main Website', 0, 1, 1);
+(1, 'base', 'Main Website', 0, 1, 1),
+(2, 'KBDB', 'Keyboard Bay', 0, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -10516,7 +10545,7 @@ INSERT INTO `m2_ui_bookmark` (`bookmark_id`, `user_id`, `namespace`, `identifier
 (1, 1, 'cms_block_listing', 'default', 1, 'Default View', '{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"search\":{\"value\":\"\"},\"columns\":{\"block_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"pageSize\":20,\"current\":1}},\"value\":\"Default View\"}}}', '2021-03-30 06:40:12', '2021-03-30 06:40:12'),
 (2, 1, 'cms_block_listing', 'current', 0, NULL, '{\"current\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"search\":{\"value\":\"\"},\"columns\":{\"block_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"pageSize\":20,\"current\":1,\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"block_id\":1,\"title\":2,\"identifier\":3,\"store_id\":4,\"is_active\":5,\"creation_time\":6,\"update_time\":7,\"actions\":8}}}', '2021-03-30 06:40:13', '2021-03-30 06:40:13'),
 (3, 1, 'product_listing', 'default', 1, 'Default View', '{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"paging\":{\"pageSize\":20,\"current\":1,\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"filters\":{\"applied\":{\"placeholder\":true}},\"search\":{\"value\":\"\"},\"columns\":{\"entity_id\":{\"visible\":true,\"sorting\":\"asc\"},\"name\":{\"visible\":true,\"sorting\":false},\"sku\":{\"visible\":true,\"sorting\":false},\"price\":{\"visible\":true,\"sorting\":false},\"websites\":{\"visible\":true,\"sorting\":false},\"qty\":{\"visible\":true,\"sorting\":false},\"short_description\":{\"visible\":false,\"sorting\":false},\"special_price\":{\"visible\":false,\"sorting\":false},\"cost\":{\"visible\":false,\"sorting\":false},\"weight\":{\"visible\":false,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keyword\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"url_key\":{\"visible\":false,\"sorting\":false},\"msrp\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"type_id\":{\"visible\":true,\"sorting\":false},\"attribute_set_id\":{\"visible\":true,\"sorting\":false},\"visibility\":{\"visible\":true,\"sorting\":false},\"status\":{\"visible\":true,\"sorting\":false},\"manufacturer\":{\"visible\":false,\"sorting\":false},\"color\":{\"visible\":false,\"sorting\":false},\"custom_design\":{\"visible\":false,\"sorting\":false},\"page_layout\":{\"visible\":false,\"sorting\":false},\"country_of_manufacture\":{\"visible\":false,\"sorting\":false},\"custom_layout\":{\"visible\":false,\"sorting\":false},\"gift_message_available\":{\"visible\":false,\"sorting\":false},\"tax_class_id\":{\"visible\":false,\"sorting\":false},\"special_from_date\":{\"visible\":false,\"sorting\":false},\"special_to_date\":{\"visible\":false,\"sorting\":false},\"news_from_date\":{\"visible\":false,\"sorting\":false},\"news_to_date\":{\"visible\":false,\"sorting\":false},\"custom_design_from\":{\"visible\":false,\"sorting\":false},\"custom_design_to\":{\"visible\":false,\"sorting\":false},\"salable_quantity\":{\"visible\":true,\"sorting\":false},\"thumbnail\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"positions\":{\"ids\":0,\"entity_id\":1,\"thumbnail\":2,\"name\":3,\"type_id\":4,\"attribute_set_id\":5,\"sku\":6,\"price\":7,\"qty\":8,\"salable_quantity\":9,\"visibility\":10,\"status\":11,\"websites\":12,\"short_description\":13,\"special_price\":14,\"special_from_date\":15,\"special_to_date\":16,\"cost\":17,\"weight\":18,\"manufacturer\":19,\"meta_title\":20,\"meta_keyword\":21,\"meta_description\":22,\"color\":23,\"news_from_date\":24,\"news_to_date\":25,\"custom_design\":26,\"custom_design_from\":27,\"custom_design_to\":28,\"page_layout\":29,\"country_of_manufacture\":30,\"custom_layout\":31,\"url_key\":32,\"msrp\":33,\"gift_message_available\":34,\"tax_class_id\":35,\"actions\":36}},\"value\":\"Default View\"}}}', '2021-03-30 06:42:58', '2021-03-30 06:42:58'),
-(4, 1, 'product_listing', 'current', 0, NULL, '{\"current\":{\"paging\":{\"pageSize\":20,\"current\":1,\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"filters\":{\"applied\":{\"placeholder\":true}},\"search\":{\"value\":\"\"},\"columns\":{\"entity_id\":{\"visible\":true,\"sorting\":\"asc\"},\"name\":{\"visible\":true,\"sorting\":false},\"sku\":{\"visible\":true,\"sorting\":false},\"price\":{\"visible\":true,\"sorting\":false},\"websites\":{\"visible\":true,\"sorting\":false},\"qty\":{\"visible\":true,\"sorting\":false},\"short_description\":{\"visible\":false,\"sorting\":false},\"special_price\":{\"visible\":false,\"sorting\":false},\"cost\":{\"visible\":false,\"sorting\":false},\"weight\":{\"visible\":false,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keyword\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"url_key\":{\"visible\":false,\"sorting\":false},\"msrp\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"type_id\":{\"visible\":true,\"sorting\":false},\"attribute_set_id\":{\"visible\":true,\"sorting\":false},\"visibility\":{\"visible\":true,\"sorting\":false},\"status\":{\"visible\":true,\"sorting\":false},\"manufacturer\":{\"visible\":false,\"sorting\":false},\"color\":{\"visible\":false,\"sorting\":false},\"custom_design\":{\"visible\":false,\"sorting\":false},\"page_layout\":{\"visible\":false,\"sorting\":false},\"country_of_manufacture\":{\"visible\":false,\"sorting\":false},\"custom_layout\":{\"visible\":false,\"sorting\":false},\"gift_message_available\":{\"visible\":false,\"sorting\":false},\"tax_class_id\":{\"visible\":false,\"sorting\":false},\"special_from_date\":{\"visible\":false,\"sorting\":false},\"special_to_date\":{\"visible\":false,\"sorting\":false},\"news_from_date\":{\"visible\":false,\"sorting\":false},\"news_to_date\":{\"visible\":false,\"sorting\":false},\"custom_design_from\":{\"visible\":false,\"sorting\":false},\"custom_design_to\":{\"visible\":false,\"sorting\":false},\"salable_quantity\":{\"visible\":true,\"sorting\":false},\"thumbnail\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"positions\":{\"ids\":0,\"entity_id\":1,\"thumbnail\":2,\"name\":3,\"type_id\":4,\"attribute_set_id\":5,\"sku\":6,\"price\":7,\"qty\":8,\"salable_quantity\":9,\"visibility\":10,\"status\":11,\"websites\":12,\"short_description\":13,\"special_price\":14,\"special_from_date\":15,\"special_to_date\":16,\"cost\":17,\"weight\":18,\"manufacturer\":19,\"meta_title\":20,\"meta_keyword\":21,\"meta_description\":22,\"color\":23,\"news_from_date\":24,\"news_to_date\":25,\"custom_design\":26,\"custom_design_from\":27,\"custom_design_to\":28,\"page_layout\":29,\"country_of_manufacture\":30,\"custom_layout\":31,\"url_key\":32,\"msrp\":33,\"gift_message_available\":34,\"tax_class_id\":35,\"actions\":36}}}', '2021-03-30 06:42:59', '2021-03-30 06:42:59'),
+(4, 1, 'product_listing', 'current', 0, NULL, '{\"current\":{\"paging\":{\"pageSize\":20,\"current\":1,\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"filters\":{\"applied\":{\"placeholder\":true}},\"search\":{\"value\":\"\"},\"columns\":{\"entity_id\":{\"visible\":true,\"sorting\":false},\"name\":{\"visible\":true,\"sorting\":false},\"sku\":{\"visible\":true,\"sorting\":false},\"price\":{\"visible\":true,\"sorting\":false},\"websites\":{\"visible\":true,\"sorting\":\"desc\"},\"qty\":{\"visible\":true,\"sorting\":false},\"short_description\":{\"visible\":false,\"sorting\":false},\"special_price\":{\"visible\":false,\"sorting\":false},\"cost\":{\"visible\":false,\"sorting\":false},\"weight\":{\"visible\":false,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keyword\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"url_key\":{\"visible\":false,\"sorting\":false},\"msrp\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"type_id\":{\"visible\":true,\"sorting\":false},\"attribute_set_id\":{\"visible\":true,\"sorting\":false},\"visibility\":{\"visible\":true,\"sorting\":false},\"status\":{\"visible\":true,\"sorting\":false},\"manufacturer\":{\"visible\":false,\"sorting\":false},\"color\":{\"visible\":false,\"sorting\":false},\"custom_design\":{\"visible\":false,\"sorting\":false},\"page_layout\":{\"visible\":false,\"sorting\":false},\"country_of_manufacture\":{\"visible\":false,\"sorting\":false},\"custom_layout\":{\"visible\":false,\"sorting\":false},\"gift_message_available\":{\"visible\":false,\"sorting\":false},\"tax_class_id\":{\"visible\":false,\"sorting\":false},\"special_from_date\":{\"visible\":false,\"sorting\":false},\"special_to_date\":{\"visible\":false,\"sorting\":false},\"news_from_date\":{\"visible\":false,\"sorting\":false},\"news_to_date\":{\"visible\":false,\"sorting\":false},\"custom_design_from\":{\"visible\":false,\"sorting\":false},\"custom_design_to\":{\"visible\":false,\"sorting\":false},\"salable_quantity\":{\"visible\":true,\"sorting\":false},\"thumbnail\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"positions\":{\"ids\":0,\"entity_id\":1,\"thumbnail\":2,\"name\":3,\"type_id\":4,\"attribute_set_id\":5,\"sku\":6,\"price\":7,\"qty\":8,\"salable_quantity\":9,\"visibility\":10,\"status\":11,\"websites\":12,\"short_description\":13,\"special_price\":14,\"special_from_date\":15,\"special_to_date\":16,\"cost\":17,\"weight\":18,\"manufacturer\":19,\"meta_title\":20,\"meta_keyword\":21,\"meta_description\":22,\"color\":23,\"news_from_date\":24,\"news_to_date\":25,\"custom_design\":26,\"custom_design_from\":27,\"custom_design_to\":28,\"page_layout\":29,\"country_of_manufacture\":30,\"custom_layout\":31,\"url_key\":32,\"msrp\":33,\"gift_message_available\":34,\"tax_class_id\":35,\"actions\":36}}}', '2021-03-30 06:42:59', '2021-03-30 08:34:22'),
 (5, 1, 'adobe_stock_images_listing', 'default', 1, 'Default View', '{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"search\":{\"value\":\"\"},\"paging\":{\"pageSize\":20,\"current\":1},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"relevance\":{\"visible\":false,\"sorting\":false},\"creation\":{\"visible\":false,\"sorting\":false},\"popularity\":{\"visible\":false,\"sorting\":false},\"nb_downloads\":{\"visible\":false,\"sorting\":false},\"undiscovered\":{\"visible\":false,\"sorting\":false}}},\"value\":\"Default View\"}}}', '2021-03-30 07:02:00', '2021-03-30 07:02:00'),
 (6, 1, 'adobe_stock_images_listing', 'current', 0, NULL, '{\"current\":{\"search\":{\"value\":\"\"},\"paging\":{\"pageSize\":32,\"current\":1,\"value\":32},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"relevance\":{\"visible\":false,\"sorting\":false},\"creation\":{\"visible\":false,\"sorting\":false},\"popularity\":{\"visible\":false,\"sorting\":false},\"nb_downloads\":{\"visible\":false,\"sorting\":false},\"undiscovered\":{\"visible\":false,\"sorting\":false},\"thumbnail_url\":{\"visible\":true,\"sorting\":false},\"overlay\":{\"visible\":true,\"sorting\":false},\"preview\":{\"visible\":true,\"sorting\":false,\"lastOpenedImage\":false}},\"displayMode\":\"grid\",\"positions\":{\"overlay\":0,\"thumbnail_url\":1,\"preview\":2,\"relevance\":3,\"creation\":4,\"popularity\":5,\"nb_downloads\":6,\"undiscovered\":7}}}', '2021-03-30 07:02:02', '2021-03-30 07:02:02');
 
@@ -10554,7 +10583,12 @@ INSERT INTO `m2_url_rewrite` (`url_rewrite_id`, `entity_type`, `entity_id`, `req
 (19, 'product', 4, 'logitech-touch-k400-plus-black-rus-920-007147.html', 'catalog/product/view/id/4', 0, 1, NULL, 1, NULL),
 (20, 'product', 4, 'keyboards/logitech-touch-k400-plus-black-rus-920-007147.html', 'catalog/product/view/id/4/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
 (21, 'product', 5, 'logitech-k580-slim-multi-device-wireless-graphite-920-009275.html', 'catalog/product/view/id/5', 0, 1, NULL, 1, NULL),
-(22, 'product', 5, 'keyboards/logitech-k580-slim-multi-device-wireless-graphite-920-009275.html', 'catalog/product/view/id/5/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}');
+(22, 'product', 5, 'keyboards/logitech-k580-slim-multi-device-wireless-graphite-920-009275.html', 'catalog/product/view/id/5/category/4', 0, 1, NULL, 1, '{\"category_id\":\"4\"}'),
+(23, 'category', 4, 'keyboards.html', 'catalog/category/view/id/4', 0, 2, NULL, 1, NULL),
+(24, 'cms-page', 1, 'no-route', 'cms/page/view/page_id/1', 0, 2, NULL, 1, NULL),
+(25, 'cms-page', 2, 'home', 'cms/page/view/page_id/2', 0, 2, NULL, 1, NULL),
+(26, 'cms-page', 3, 'enable-cookies', 'cms/page/view/page_id/3', 0, 2, NULL, 1, NULL),
+(27, 'cms-page', 4, 'privacy-policy-cookie-restriction-mode', 'cms/page/view/page_id/4', 0, 2, NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -11372,16 +11406,16 @@ ALTER TABLE `m2_catalog_category_product_index_replica`
 --
 ALTER TABLE `m2_catalog_category_product_index_store1`
   ADD PRIMARY KEY (`category_id`,`product_id`,`store_id`),
-  ADD KEY `M2_CAT_CTGR_PRD_IDX_STORE1_PRD_ID_STORE_ID_CTGR_ID_VISIBILITY` (`product_id`,`store_id`,`category_id`,`visibility`),
-  ADD KEY `IDX_89C0E4A586074B621C05FE619315494D` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`);
+  ADD KEY `IDX_141777C1549D4C3425ED5AFCE9F03C18` (`product_id`,`store_id`,`category_id`,`visibility`),
+  ADD KEY `IDX_FE485F24D6363D3186B87EA601BE56B2` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`);
 
 --
 -- Indexes for table `m2_catalog_category_product_index_store1_replica`
 --
 ALTER TABLE `m2_catalog_category_product_index_store1_replica`
   ADD PRIMARY KEY (`category_id`,`product_id`,`store_id`),
-  ADD KEY `IDX_141777C1549D4C3425ED5AFCE9F03C18` (`product_id`,`store_id`,`category_id`,`visibility`),
-  ADD KEY `IDX_FE485F24D6363D3186B87EA601BE56B2` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`);
+  ADD KEY `M2_CAT_CTGR_PRD_IDX_STORE1_PRD_ID_STORE_ID_CTGR_ID_VISIBILITY` (`product_id`,`store_id`,`category_id`,`visibility`),
+  ADD KEY `IDX_89C0E4A586074B621C05FE619315494D` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`);
 
 --
 -- Indexes for table `m2_catalog_category_product_index_tmp`
@@ -14514,7 +14548,7 @@ ALTER TABLE `m2_catalog_product_entity_media_gallery`
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_media_gallery_value`
 --
 ALTER TABLE `m2_catalog_product_entity_media_gallery_value`
-  MODIFY `record_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Record ID', AUTO_INCREMENT=8;
+  MODIFY `record_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Record ID', AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_text`
@@ -14532,7 +14566,7 @@ ALTER TABLE `m2_catalog_product_entity_tier_price`
 -- AUTO_INCREMENT for table `m2_catalog_product_entity_varchar`
 --
 ALTER TABLE `m2_catalog_product_entity_varchar`
-  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=87;
+  MODIFY `value_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID', AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `m2_catalog_product_frontend_action`
@@ -15018,7 +15052,7 @@ ALTER TABLE `m2_email_wishlist`
 -- AUTO_INCREMENT for table `m2_flag`
 --
 ALTER TABLE `m2_flag`
-  MODIFY `flag_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Flag Id', AUTO_INCREMENT=2;
+  MODIFY `flag_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Flag Id', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `m2_gift_message`
@@ -15090,7 +15124,7 @@ ALTER TABLE `m2_inventory_source_carrier_link`
 -- AUTO_INCREMENT for table `m2_inventory_source_item`
 --
 ALTER TABLE `m2_inventory_source_item`
-  MODIFY `source_item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `source_item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `m2_inventory_source_stock_link`
@@ -15672,13 +15706,13 @@ ALTER TABLE `m2_sales_refunded_aggregated_order`
 -- AUTO_INCREMENT for table `m2_sales_sequence_meta`
 --
 ALTER TABLE `m2_sales_sequence_meta`
-  MODIFY `meta_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=9;
+  MODIFY `meta_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `m2_sales_sequence_profile`
 --
 ALTER TABLE `m2_sales_sequence_profile`
-  MODIFY `profile_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=9;
+  MODIFY `profile_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `m2_sales_shipment`
@@ -15798,19 +15832,19 @@ ALTER TABLE `m2_sitemap`
 -- AUTO_INCREMENT for table `m2_store`
 --
 ALTER TABLE `m2_store`
-  MODIFY `store_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Store ID', AUTO_INCREMENT=2;
+  MODIFY `store_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Store ID', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `m2_store_group`
 --
 ALTER TABLE `m2_store_group`
-  MODIFY `group_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Group ID', AUTO_INCREMENT=2;
+  MODIFY `group_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Group ID', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `m2_store_website`
 --
 ALTER TABLE `m2_store_website`
-  MODIFY `website_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Website ID', AUTO_INCREMENT=2;
+  MODIFY `website_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Website ID', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `m2_tax_calculation`
@@ -15894,7 +15928,7 @@ ALTER TABLE `m2_ui_bookmark`
 -- AUTO_INCREMENT for table `m2_url_rewrite`
 --
 ALTER TABLE `m2_url_rewrite`
-  MODIFY `url_rewrite_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Rewrite ID', AUTO_INCREMENT=23;
+  MODIFY `url_rewrite_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Rewrite ID', AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `m2_variable`
