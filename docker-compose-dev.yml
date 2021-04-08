@@ -27,38 +27,38 @@ services:
     labels:
       - traefik.enable=true
       # HTTP
-      - traefik.http.routers.vadymp-local-dev-http.rule=Host(`vadymp-dev.local`,`vadymp-keybay-dev.local`,`www.vadymp-keybay-dev.local`)
+      - traefik.http.routers.vadymp-local-dev-http.rule=Host(`vadymp-dev.local`,`www.vadymp-dev.local`,`vadymp-keybay-dev.local`,`www.vadymp-keybay-dev.local`)
       - traefik.http.routers.vadymp-local-dev-http.entrypoints=http
       - traefik.http.routers.vadymp-local-dev-http.service=vadymp-local-dev-http
       - traefik.http.services.vadymp-local-dev-http.loadbalancer.server.port=80
       - traefik.http.services.vadymp-local-dev-http.loadbalancer.server.scheme=http
       # HTTPS
-      - traefik.http.routers.vadymp-local-dev-https.rule=Host(`vadymp-dev.local`,`vadymp-keybay-dev.local`,`www.vadymp-keybay-dev.local`)
+      - traefik.http.routers.vadymp-local-dev-https.rule=Host(`vadymp-dev.local`,`www.vadymp-dev.local`,`vadymp-keybay-dev.local`,`www.vadymp-keybay-dev.local`)
       - traefik.http.routers.vadymp-local-dev-https.entrypoints=https
       - traefik.http.routers.vadymp-local-dev-https.tls=true
       - traefik.http.routers.vadymp-local-dev-https.service=vadymp-local-dev-https
       - traefik.http.services.vadymp-local-dev-https.loadbalancer.server.port=443
       - traefik.http.services.vadymp-local-dev-https.loadbalancer.server.scheme=https
       # Develop with extension that allows setting livereload host and port - https://github.com/lokcito/livereload-extensions
-      - traefik.http.routers.vadymp-local-dev-livereload-https.rule=Host(`vadymp-dev.local`,`vadymp-keybay-dev.local`,`www.vadymp-keybay-dev.local`)
+      - traefik.http.routers.vadymp-local-dev-livereload-https.rule=Host(`vadymp-dev.local`,`www.vadymp-dev.local`,`vadymp-keybay-dev.local`,`www.vadymp-keybay-dev.local`)
       - traefik.http.routers.vadymp-local-dev-livereload-https.entrypoints=livereload-https
       - traefik.http.routers.vadymp-local-dev-livereload-https.tls=true
       - traefik.http.routers.vadymp-local-dev-livereload-https.service=vadymp-local-dev-livereload-https
       - traefik.http.services.vadymp-local-dev-livereload-https.loadbalancer.server.port=35729
       - traefik.http.services.vadymp-local-dev-livereload-https.loadbalancer.server.scheme=http
-      - traefik.http.routers.vadymp-local-dev-livereload-http.rule=Host(`vadymp-dev.local`,`vadymp-keybay-dev.local`,`www.vadymp-keybay-dev.local`)
+      - traefik.http.routers.vadymp-local-dev-livereload-http.rule=Host(`vadymp-dev.local`,`www.vadymp-dev.local`,`vadymp-keybay-dev.local`,`www.vadymp-keybay-dev.local`)
       - traefik.http.routers.vadymp-local-dev-livereload-http.entrypoints=livereload-http
       - traefik.http.routers.vadymp-local-dev-livereload-http.service=vadymp-local-dev-livereload-http
       - traefik.http.services.vadymp-local-dev-livereload-http.loadbalancer.server.port=35729
       - traefik.http.services.vadymp-local-dev-livereload-http.loadbalancer.server.scheme=http
     # Must add extra_hosts to be written to /etc/hosts - otherwise containerized application can not curl itself
     extra_hosts:
-      - "vadymp-dev.local vadymp-keybay-dev.local www.vadymp-keybay-dev.local:127.0.0.1"
+      - "vadymp-dev.local www.vadymp-dev.local vadymp-keybay-dev.local www.vadymp-keybay-dev.local:127.0.0.1"
       # Required for xDebug on Linux hosts till docker.host.internal is not available by default - https://github.com/docker/libnetwork/pull/2348/files
       - "host.docker.internal:172.17.0.1"
     links:
 #      - memcached
-#      - redis
+      - redis
       - elasticsearch
     external_links:
       - mariadb104:mysql
@@ -83,12 +83,12 @@ services:
 #  vadymp-local-dev-sync:
 #    external: true
 
-#  redis:
-#    image: redis:latest
-#    network_mode: bridge
-#    labels:
-#      - traefik.enable=false
-#    restart: always
+  redis:
+    image: redis:latest
+    network_mode: bridge
+    labels:
+      - traefik.enable=false
+    restart: always
 
 #  memcached:
 #    image: 'memcached:1.5'

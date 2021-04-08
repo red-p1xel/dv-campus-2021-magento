@@ -122,39 +122,6 @@ This section contains way for switching project environments.
  ```
  - Enter to container using alias `BASH` in your project root directory
  - Create or copy files `auth.json` and `../app/etc/config.php` with your credentials and run `composer install`
- - Create symlink for server environment configuration `cd app/etc && ln -s env.dev.php env.php && cd ../../`
- - Clear cache, reindex indexes and run setup upgrade `CC && RE && SU`
-
-### Creating the database dump in `prod` environment
-Create dumpfile using the **phpMyAdmin** and compress this file `gzip <PATH_TO_FILE>/<FILENAME>.sql`.
-Edit `.gitignore` to include the compressed dump file (**for {DV.Campus} only!!!**)
-
-### Create new database and user for `dev` environment
-Databases for `prod`, `dev` or something's environments must have a similar databases. This is common rule!
-For create database we need enter to used container for **MySQL**/**MariaDB** with following aliases like `MY57`
-for **MySQL version 5.7** and execute following commands:
-```sql
--- # Create database for `dev` environment
-CREATE DATABASE <YOUR_SITE_NAME>_dev_local;
--- # Create database user
-CREATE USER '<YOUR_SITE_NAME>_dev_local'@'%' IDENTIFIED BY '<YOUR_SECURED_PASSWORD_HERE>';
--- # Grant all tables privileges for this database user
-GRANT ALL ON <YOUR_SITE_NAME>_dev_local.* TO '<YOUR_SITE_NAME>_dev_local'@'%';
-```
-Unpack your dumpfile `gunzip <FILENAME>.sql.gz --keep`
-
-### Connect to database using your local **MySQL Client**.
-```bash
-mysql -u<USER_NAME> -p <DB_NAME> -h127.0.0.1 --port=3357
-```
-In the shell of database container you must execute the following commands:
-```sql
--- # Check the database existence
-SHOW DATABASES;
--- # SWITCH DATABASE (IF YOU NEED IT)
-USE <DB_NAME>;
-```
-For importing dumpfile use **phpMyAdmin** or something liked you.
 
 ### Exclude directories in PhpStorm
 You can exclude following directories for speedup of filesystem indexation in PhpStorm.
