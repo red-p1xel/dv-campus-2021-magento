@@ -17,17 +17,17 @@ For more information read this article:
 
 For all merges on the `master` branch recommended use flag `--no-ff`
 
+**KEEP IN MIND:** All newly created repositories must be configured with following command:
+```bash
+git config core.fileMode false
+```
+This configuration **disable** tracking permission changes in your local filesystem and this changes not pushed to
+remote repository. 
+
 **Usage example:**
 ```bash
 # Case: We have changes commited on branch `lesson-2-adding-multiple-websites`
-git checkout master \
-  git merge lesson-2-adding-multiple-websites --no-ff
-```
-
-### Magento Admin credentials
-```
-Username: development
-Password: q1w2e3r4
+git checkout master ; git merge lesson-2-adding-multiple-websites --no-ff
 ```
 
 ### What is Store View?
@@ -73,7 +73,6 @@ docker-compose down && docker-compose up -d --force-recreate
 ```
 8. Increase certificate counts for your **<BASE_DOMAIN_NAME>** in **.../misc/apps/docker_infrastructure/local_infrastructure/configuration/certificates.toml**
 9. Add next configuration to **.htaccess** in your project root directory.
-
 ```apacheconf
 SetEnvIf Host .*<BASE_DOMAIN_NAME>.local.* MAGE_RUN_CODE=base
 SetEnvIf Host .*<BASE_DOMAIN_NAME>.local.* MAGE_RUN_TYPE=website
@@ -86,5 +85,51 @@ SetEnvIf Host .*<BASE_DOMAIN_NAME>-<SUBNAME>.local.* MAGE_RUN_TYPE=website
 ### Add new websites automatically
 For adding new websites automatically you can use alias ``DOCKERIZE`` in your terminal. 
 
-### Links
+### Magento deployment modes
+
+ - developer
+ - default
+ - production
+ - maintenance
+
+For switching between modes we can use next command:
+
+```bash
+php bin/magento deploy:mode:set <MODE> <OPTIONS>
+```
+
+### DOCKERIZER way to adding new environments
+**DOKERIZER** can add new environments automatically. Just execute following command for adding environment
+
+```bash
+# In this example ENV_NAME is `dev`
+php ${PROJECTS_ROOT_DIR}dockerizer_for_php/bin/console env:add <ENV_NAME>
+```
+
+### Switch to `dev` environment
+This section contains way for switching project environments.
+ - After add new environment you must clone repository to new folder like `<YOUR_PROJECT_NAME>-dev.local`
+ ```bash
+ git clone <REPOSITORY> <FOLDER_NAME>
+ ```
+ - Change directory, switch to actual branch and run following command for starting Docker instance
+ ```bash
+ docker-compose -f docker-compose-dev.yml up -d
+ ```
+ - Check instance after starting
+ ```bash
+ docker-compose ps
+ ```
+ - Enter to container using alias `BASH` in your project root directory
+ - Create or copy files `auth.json` and `../app/etc/config.php` with your credentials and run `composer install`
+
+### Exclude directories in PhpStorm
+You can exclude following directories for speedup of filesystem indexation in PhpStorm.
+- `../dev/`
+- `../pub/static/`
+- `../var/`
+
+### Useful links
+ - [Development Infrastructure 4.1](https://docs.google.com/presentation/d/1KFgYiPe5-Acviy083IIA1G5202PkXwJjwCYJv1us7NE)
  - [Lesson 2: Setting up multiple websites within one backend](https://docs.google.com/presentation/d/1R8ZmyVCSiikAM21gEQfH1azMVBs2xwclMarWhKscUQo)
+ - [Lesson 3: Application Modes and Pipeline Deployment](https://docs.google.com/presentation/d/1PmmaUUDgPsDGrkCnsjf8z1Ec5m5Iza_8wyMpgYy9NDA)

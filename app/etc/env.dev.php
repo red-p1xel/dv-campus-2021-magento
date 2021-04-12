@@ -17,9 +17,9 @@ return [
         'connection' => [
             'default' => [
                 'host' => 'mysql',
-                'dbname' => 'vadymp_local',
-                'username' => 'vadymp_local',
-                'password' => 'vadymp_local',
+                'dbname' => 'vadymp_dev_local',
+                'username' => 'vadymp_dev_local',
+                'password' => 'pa$$W0rd',
                 'model' => 'mysql4',
                 'engine' => 'innodb',
                 'initStatements' => 'SET NAMES utf8;',
@@ -36,7 +36,7 @@ return [
         ]
     ],
     'x-frame-options' => 'SAMEORIGIN',
-    'MAGE_MODE' => 'developer',
+    'MAGE_MODE' => 'production',
     'session' => [
         'save' => 'files'
     ],
@@ -78,7 +78,7 @@ return [
         'vertex' => 1
     ],
     'downloadable_domains' => [
-        'vadymp.local'
+        'vadymp-dev.local'
     ],
     'install' => [
         'date' => 'Fri, 26 Mar 2021 18:05:58 +0000'
